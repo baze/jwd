@@ -4,12 +4,18 @@ var $ = require('jquery');
 
 module.exports = function () {
 
-	var ToC =
-		  "<nav role='navigation' class='landingpage-toc' style='" + attr + bodyMaxwidth + unit + "'>" +
-		    "<ul>";
+	var attr = "max-width:"
+	var unit = "px;"
 
+	if( typeof bodyMaxwidth !== 'undefined' ) {
+		var ToC = "<nav role='navigation' class='landingpage-toc' style='" + attr + bodyMaxwidth + unit + "'>" + "<ul>";
+	} else{
+		var ToC = "<nav role='navigation' class='landingpage-toc'>" + "<ul>";
+	}
 		var newLine, el, title, titlestring, link, anchor;
 
+	if( typeof tocHeadlines !== 'undefined' ) {
+		
 		$(tocHeadlines).each(function() {
 		  
 		  el = $(this);
@@ -28,6 +34,7 @@ module.exports = function () {
 		  ToC += newLine;
 
 		});
+
 
 		ToC +=
 		   "</ul>" +
@@ -55,6 +62,12 @@ module.exports = function () {
 	        	} else {
 	        		header.removeClass('toc-scrolled');
 	        	}
+
+	        	if ( $('.header--fixed').length ) {
+	  				var height = $('.header--fixed').outerHeight();
+	   				$('.toc-scrolled').css({ "margin-top" : height });
+				}
+
 		}, 50);
 
 	    });
@@ -77,5 +90,7 @@ module.exports = function () {
 	    		}
 	    	})
 		});
+
+	}
 
 };

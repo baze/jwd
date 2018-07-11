@@ -10,6 +10,8 @@
 ?>
 			
 			<?php 
+				get_template_part('_modules/_breadcrumbs');
+				
 				echo '<header class="category__header"><div class="container"><div class="container__inner">';
 					the_archive_title('<h1 class="category__title">', '</h1>');
 					the_archive_description('<p class="category__description">', '</p>');

@@ -4,12 +4,17 @@ var $ = require('jquery');
 
 module.exports = function () {
 
+	const hero = $('.hero');
+	const header = $('.header--fixed');
+	var height = header.outerHeight(true);
+
+	hero.css({ "margin-top" : height });
+
 	$(window).scroll(function(){ 
 		
 		const scrollDepth = 256;
 		var position = $(window).scrollTop();
-		const header = $('.header--fixed');
-
+		
 		if ( position <= 44 ) {
 			header.addClass('initial');
 		} else {

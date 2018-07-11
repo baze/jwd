@@ -58,6 +58,6 @@
 	
 	<?php include(locate_template('_modules/_subnavi.php')); ?>
 
-</header>
-
 <?php echo '<style>.header.header--fixed{ max-width: ' . $body__maxwidth . 'px !important; }</style>'; ?>
+
+</header>

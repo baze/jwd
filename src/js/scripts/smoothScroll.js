@@ -14,7 +14,7 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
       if (target.length) {
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top + (-120)
+          scrollTop: target.offset().top + (-220)
         }, 1000, function() {
           var $target = $(target);
           $target.focus();

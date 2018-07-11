@@ -9,7 +9,7 @@ get_header(); ?>
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 		echo '<section class="section article">';
-			
+	
 			get_template_part('_modules/_product');
 						
 		echo '</section>';

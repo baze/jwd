@@ -18,8 +18,6 @@
 
 	<script>
 		var bodyMaxwidth = "<?php echo $body__maxwidth; ?>";
-		var attr = "max-width:"
-		var unit = "px;"
 		var tocHeadlines = ".wrapper <?php echo $landingpage_toc__headlines; ?>";
 	</script>
 

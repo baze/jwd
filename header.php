@@ -66,5 +66,3 @@
   <?php } ?>
 
     <main class="main <?php echo $main_classes; ?>" role="main" id="main">
-
-      <?php get_template_part( '_modules/_cta-box' ); ?>

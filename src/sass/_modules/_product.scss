@@ -58,6 +58,10 @@
 
 .product__crosssale{}
 
+.category__title{
+	margin-top: 0 !important;
+}
+
 .taxonomy, .child-taxonomy{
 	text-align: center;
 
@@ -67,5 +71,5 @@
 }
 
 .child-taxonomy{
-	padding-bottom: 4em;
+	padding: 2em 0;
 }

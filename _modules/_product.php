@@ -20,8 +20,10 @@
 
 <div class="product">
   
-  <div class="container__inner row">
+  <?php get_template_part('_modules/_breadcrumbs'); ?>
 
+  <div class="container__inner row">
+    
   <?php if ( has_post_thumbnail() ) { ?>
     <figure class="product__image column columns-4">
     <?php 
