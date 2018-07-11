@@ -1,0 +1,75 @@
+html, body {
+	min-height: 100%;
+	max-width: 100%;
+	margin: 0; padding: 0;
+}
+
+html{
+	&.overlay-active{ 
+		max-height: 100vh;
+		overflow: hidden;
+	}
+}
+
+body{
+	@include breakpoint($breakpoint-medium) {
+		display: flex;
+		flex-direction: column;
+
+		.header, .hero, .footer{ flex-grow: 0; flex-shrink: 0; max-width: 100%; }
+		.wrapper{ flex-grow: 1; }
+	}
+
+	.boxed &{ 
+		@extend %box-shadow;
+		margin: 0 auto; 
+	}
+
+	
+}
+
+.wrapper{
+	@extend %clear;
+	&.main--has-sidebar{
+		@include breakpoint($breakpoint-medium) { 
+			max-width: $grid-max-width;
+			margin: 0 auto;
+		}
+	}
+}
+
+.main{
+	&.main--has-sidebar{
+		@include breakpoint($breakpoint-medium) { float: left; width: susy-span(9 of 12); }
+	}
+}
+
+.sidebar{
+	
+	padding: 0 1em;
+	margin-top: 4em;
+
+	@include breakpoint($breakpoint-medium) { 
+		margin-top: 0;
+		width: susy-span(3 of 12);
+		padding-top: 10em;
+		top: -1px;
+		float: right;
+	}
+}
+
+.layout{
+	& + &{ margin-top: 1.5rem; }
+}
+
+.flex__text{
+	width: 100%;
+
+	.section--colored &,
+	.section--colored & h1,
+	.section--colored & h2,
+	.section--colored & h3,
+	.section--colored & h4,
+	.section--colored & h5,
+	.section--colored & h6{ color: #fff; }
+}

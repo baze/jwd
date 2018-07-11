@@ -1,0 +1,120 @@
+@import 'screen';
+
+.body-container, 
+.title h1{ 
+    max-width: 80%; 
+    margin: 0 auto; 
+} 
+
+.body-container{
+    margin-top: 3em;
+}
+
+.table-of-contents{
+    background-color: $highlight-color-1;
+    color: $white;
+    padding: 0.75em;
+
+    @include breakpoint($breakpoint-wide) {
+        position: fixed;
+        right: 1em;
+        max-width: 420px;
+        z-index: 200;
+
+        &.toc-scrolled{ top: 1em;  }
+        &.toc-notscrolled{ top: 6em;  }
+    }
+}
+
+.title{
+    position: absolute;
+    width: 100%;
+    background: $highlight-color-1;
+    color: $white;
+
+    h1{ 
+        color: $white; 
+        padding: 0.25em 0; 
+    }
+}
+
+.toc-list{
+    margin: 0; padding: 0;
+    list-style: none;
+}
+
+.toc-list-entry{ 
+    padding: 0.25em 0.5em;
+
+    & + &{ border-top: 1px solid rgba(255, 255, 255, 0.65); } 
+
+    a, a:hover{ text-decoration: none; }
+
+    a:after{ display: none; } 
+}
+
+
+
+
+@media (max-width: 1300px){
+    .styleguide-wrapper{
+        padding: 2em 1em;
+    }
+}
+
+@media (min-width: 1300px){
+    .styleguide-wrapper{
+        margin-left: 1em;
+        margin-right: 440px;
+        position: relative;
+    }
+
+    .patterns{ position: relative; z-index: 1;  }
+}
+
+.pattern{ padding: 3em 0;  }
+.pattern + .pattern{ border-top: 1px solid #777; }
+
+.pattern-title{ margin: 0 0 2em 0;  }
+
+.pattern .display{
+    border-top: 1px solid $highlight-color-1;
+    padding: 2em 0;
+}
+
+.pattern-description{
+    margin: 1.5em 0;
+}
+
+.pattern .display,
+.pattern .source{ position: relative;  }
+
+.pattern .display:before,
+.pattern .source:before{
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+
+    background-color: $highlight-color-1;
+    color: $white;
+    font-weight: 700;
+    
+    padding: 0 0.75em;
+
+    position: absolute;
+    top: -32px;
+    left: 0;
+}
+
+.pattern .display:before{ content: "Design pattern:"; }
+
+.pattern .source{
+    margin-top: 3em;
+}
+
+.pattern .source:before{ content: "HTML Source:"; }
+
+.html{
+    transition: all 185ms ease-in-out;
+    max-height: 20em;
+}

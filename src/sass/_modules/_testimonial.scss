@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+.testimonial__entry{
+	padding: 1.75em 0.75em;
+	border: 1px solid #eee;
+	text-align: center;
+
+	@extend %transition;
+	@extend %border-radius;
+	@extend %box-shadow-hover;
+
+	@include breakpoint($breakpoint-small) {
+		&+&{ margin-top: 0.5em; }
+	}
+}
+
+.testimonial__entry__quote{
+	font-size: 1.75em; 
+	line-height: 1.2;
+	font-style: italic;
+	color: $highlight-color-1;
+}
+
+.testimonial__entry__ratings{
+	
+	&:before{
+		color: $amber-500;
+		font-family: "Arial", sans-serif;
+	}
+
+	&[data-content="1"]:before{ content: "★ ☆ ☆ ☆ ☆"; }
+
+	&[data-content="2"]:before{ content: "★ ★ ☆ ☆ ☆"; }
+
+	&[data-content="3"]:before{ content: "★ ★ ★ ☆ ☆"; }
+
+	&[data-content="4"]:before{ content: "★ ★ ★ ★ ☆"; }
+
+	&[data-content="5"]:before{ content: "★ ★ ★ ★ ★"; }
+
+}
+
+.testimonial__entry__text{
+	line-height: 1.3;
+}
+
+.testimonial__entry__person{}
+
+.testimonial__entry__person__image{
+	border-radius: 50%;
+	max-width: 6em;
+}
+
+.testimonial__entry__person__name{
+	color: $primary-color;
+	font-size: 1.25em;
+	line-height: 1;
+	margin-bottom: 0;
+	font-weight: $font-weight-normal;
+}
+
+.testimonial__entry__person__title{}

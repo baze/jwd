@@ -1,0 +1,31 @@
+.subnavi{
+	padding: 0.75em;
+	display: flex;
+	flex-wrap: nowrap;
+	@include breakpoint($breakpoint-small) { overflow-x: scroll; }
+	justify-content: space-between;
+	align-items: center;
+}
+
+.subnavi__logo{
+	display: block;
+	max-height: 2em;
+	width: auto;
+	flex-shrink: 0;
+}
+
+.subnavi__pages{
+	@extend %reset;
+	color: $white;
+	display: flex;
+}
+
+.subnavi__pages__entry{
+	padding: 0 0.5em;
+
+	&.current{ font-weight: $font-weight-bold; }
+	
+	@include breakpoint($breakpoint-medium) {
+		&:last-child(){ padding-right: 0; }
+	}
+}

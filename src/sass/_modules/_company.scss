@@ -1,0 +1,39 @@
+.company{
+	margin-bottom: 1.5em;
+
+	& + &{ margin-top: 1.5em; margin-bottom: 0; }
+}
+
+.company__name{ font-weight: $font-weight-bold; }
+
+.company__fon,
+.company__fax,
+.company__email{ display: block; }
+
+.company__fon:before{ content:"fon: "; }
+.company__fax:before{ content:"fax: "; }
+.company__email:before{ content:"email: "; }
+
+.footer__companies{
+	.company__state,
+	.company__country,
+	.company__legal{ display: none; }
+}
+
+.imprint{
+	.company__contact,
+	.company__legal{ margin-top: 0.75em; }
+
+	.company__state,
+	.company__country,
+	.company__representative,
+	.company__register,
+	.company__register__no,
+	.company__court,
+	.company__vatID{ display: block; }
+
+	.company__representative:before{ content:"Vertretungsberechtigt: "; }
+	.company__vatID:before{ content:"USt.-ID: "; }
+	.company__register__no:before{ content:"Registernummer: "; }
+	.company__court:before{ content:"Registergericht: "; }
+}

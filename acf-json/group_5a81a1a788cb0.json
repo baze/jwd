@@ -1,0 +1,57 @@
+{
+    "key": "group_5a81a1a788cb0",
+    "title": "Sektion",
+    "fields": [
+        {
+            "key": "field_5a81a1c73aaa4",
+            "label": "Sektions-Layout",
+            "name": "section-classes",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "section--element": "Element-Sektion",
+                "section--colored": "Farbiger Hintergrund",
+                "pattern--fixed": "Feststehendes Hintergrundmuster",
+                "pattern--wiggle": "Hintergrundmuster \"Wiggle\"",
+                "pattern--hideout": "Hintergrundmuster \"Hideout\"",
+                "pattern--graph": "Hintergrundmuster \"Graph\"",
+                "pattern--texture": "Hintergrundmuster \"Texture\"",
+                "pattern--hexagon": "Hintergrundmuster \"Hexagon\"",
+                "pattern--food": "Hintergrundmuster \"Food\"",
+                "pattern--plus": "Hintergrundmuster \"Plus\""
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1525963610
+}

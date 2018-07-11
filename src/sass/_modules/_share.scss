@@ -1,0 +1,30 @@
+.share{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 4em auto 0 auto;
+	
+	$social_size: 4em;
+
+	a{ 
+		display: block;
+		width: $social_size;
+		line-height: $social_size;
+		text-align: center;
+		background-color: pink;
+
+		&:hover{
+			position: relative;
+			transform: scale(1.15);
+			z-index: 995;
+		}
+
+		&, &:link, &:active, &:hover, &:visited{ color: $white !important; }
+	}
+
+	[title="facebook"]{ background-color: $facebook; }
+	[title="twitter"]{ background-color: $twitter; }
+	[title="linkedin"]{ background-color: $linkedin; }
+	[title="xing"]{ background-color: $xing; }
+
+}

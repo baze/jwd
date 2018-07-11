@@ -1,0 +1,64 @@
+//normal links
+::-moz-selection{ 
+	background: $primary-color; 
+	color:$white; 
+	text-shadow: none; 
+}
+::selection{ 
+	background:$primary-color; 
+	color:$white; 
+	text-shadow: none;
+}
+
+a{
+	
+	@extend %link-reset;
+	@extend %transition;
+	
+	color: inherit;
+
+	p &:not(.btn){
+		
+		border-bottom: 1px solid $highlight-color-1;
+
+		&:link, &:hover, &:active, &:visited{ 
+			text-decoration: none;
+		}
+
+	}
+			
+}
+
+//navigation links
+nav a{
+	text-decoration: none;
+	white-space: nowrap;
+
+	&:link, &:hover, &:active, &:visited{ 
+		text-decoration: none;
+	}
+}
+
+.sidebar a{ 
+	@extend %link-reset;
+	@extend %transition;
+	color: $highlight-color-1; 
+}
+
+// a[rel="prev"],
+// a[rel="next"]{
+// 	text-decoration: none;
+// 	color: $dark-gray;
+// 	background: $primary-color;
+// 	padding: 0 0.25em;
+// 	font-family:$secondary-font;
+// }
+
+// a[rel="prev"]:hover,
+// a[rel="next"]:hover{background: $light-gray;}
+
+// a[rel="prev"]:before,
+// a[rel="next"]:after{margin: 0;}
+
+// a[rel="prev"]{float: left;}
+// a[rel="next"]{float: right;}

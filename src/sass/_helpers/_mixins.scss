@@ -1,0 +1,415 @@
+%clear{
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin linkTextOffscreen() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+@mixin hoverActiveFocus($property, $value) {
+    &:hover, &:active, &:focus {
+        #{$property}: $value;
+    }
+}
+
+//rem-fallback
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+%reset{
+  margin: 0; padding: 0;
+  list-style-type: none;
+}
+
+//horizontal centering
+%center{
+  display: block;
+  margin: 0 auto;
+}
+
+%padding{
+  padding: 0 1.5em;
+}
+
+%box-shadow, .box-shadow{
+  box-shadow: 0 2px 0.25em 0 rgba(0,0,0,0.15);
+}
+
+@mixin box-shadow($x: 0, $y: 2px, $spread: 0.25em, $color: rgba(0, 0, 0, 0.15)) {
+  box-shadow: $x $y $spread $color;
+}
+
+@mixin text-shadow($x:0, $y:2px, $spread:0.25em, $color:rgba(0, 0, 0, 0.15)) {
+  text-shadow: $x $y $spread $color;
+}
+
+%box-shadow-hover{
+  &:hover{ box-shadow: 0 4px 0.45em 0 rgba(0,0,0,0.15); }
+}
+
+%transition{
+  transition: all 185ms ease-in-out;
+}
+
+%border-radius{
+  border-radius: 0.15em;
+}
+
+%fleximage {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+@mixin drop-caps() {
+    &:first-letter {
+      float: left;
+      font-size: 75px;
+      line-height: 60px;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-left: 3px;
+      font-family: $secondary-font;
+    }
+}
+
+%form-reset{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: middle;
+}
+
+
+%disable-link-desktop {
+  @include breakpoint($breakpoint-small-medium) {
+    pointer-events: none;
+  }
+}
+
+%link-reset{
+  text-decoration: none;
+  &:hover{ text-decoration: none; }
+}
+
+%element{
+  max-width: 100%;
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid lighten($primary-color, 40%);
+  padding: 0.75rem;
+}
+
+.section{ 
+  padding-top: 4em;
+  padding-bottom: 4em;
+
+  @include breakpoint($breakpoint-medium) {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+}
+
+.section--element{
+  padding: 0;
+}
+
+.overlapped{
+  @extend .section;
+  position: relative;
+  z-index: 1;
+
+  max-width: 90%;
+}
+
+.overlapped--top{
+  @extend .overlapped;
+  margin-top: -7em;
+  @include breakpoint($breakpoint-medium) { margin-top: -14em; }
+}
+
+.overlapped--bottom{
+  @extend .overlapped;
+   margin-bottom: -7em;
+  @include breakpoint($breakpoint-medium) { margin-bottom: -14em; }
+}
+
+.overlapped--both{
+  @extend .overlapped;
+
+  margin-top: -7em;
+  margin-bottom: -7em;
+
+  @include breakpoint($breakpoint-medium) { 
+    margin-top: -14em;
+    margin-bottom: -14em;
+  }
+}
+
+
+.section--colored{
+  @extend .section;
+  background-color: $highlight-color-1;
+}
+
+.section--gradient{
+  @extend .section;
+  @extend %gradient;
+}
+
+.expand{
+  @extend %transition;
+  &:hover{ letter-spacing: 0.045em; }
+}
+
+%table-reset{
+  table, table *{ border: 0; }
+}
+
+%hide-scrollbars, .hide-scrollbars{
+  &::-webkit-scrollbar { display: none; }
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+%button-reset{
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+  border: none;
+}
+
+%list-reset{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+%border{
+  border: 1px solid lighten($primary-color, 35%); 
+}
+
+%spacer{ @include breakpoint($breakpoint-small) {
+ & + &{ margin-top: 1.5em; }  
+  }
+}
+
+%cta{
+  @extend %transition;
+  @extend %border-radius; 
+  padding: 0.5em 1.25em;
+  text-decoration: none;
+  
+  &:hover{ 
+    text-decoration: none;
+    font-weight: 700; 
+    letter-spacing: 0.025em; 
+  }
+
+}
+
+%cta-pos{
+  @extend %cta;
+  background-color: $highlight-color-1;
+  color: $white;
+}
+
+%cta-neg{
+  @extend %cta;
+  border: 1px solid $highlight-color-1;
+  color: $highlight-color-1;
+
+  &:hover{ 
+    background-color: $highlight-color-1;
+    color: $white; 
+  }
+}   
+
+%cta-white{ 
+  @extend %cta;
+  border: 1px solid $white;
+  color: $white;
+}
+
+%overflow-pattern, .overflow-pattern{
+  @include breakpoint($breakpoint-small) {
+    
+    overflow-x: scroll;
+    //overflow-y: hidden;
+    max-width: 999%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    & > *{ 
+      white-space: nowrap;
+      width: 85%;
+      min-width: 85%;
+      margin-left: gutter();
+      
+      p{ white-space: normal; }
+
+    }
+
+  }
+}
+
+.front-page-headline{
+  font-weight: 300;
+}
+
+.headline-transition{
+  
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  position: relative;
+  overflow: hidden;
+
+  &:hover{
+    color: $highlight-color-1;
+    
+    span:before{ width: 100%; }
+
+    &:after{ transform: translate3d(0,0,0); }
+  }
+  
+  span{
+    display: block;
+    position: relative;
+    
+    &:before{
+      content: attr(data-letters);
+      position: absolute;
+      color: $white;
+      left: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0%;
+      transition: all 0.5s;
+      z-index: 2;
+      transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    }
+  }
+
+  &:after{
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      background: $highlight-color-1;
+      transform: translate3d(101%,0,0);
+      transition: transform 0.5s;
+      transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  }
+}
+
+// fluid type
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+.shake{
+  &:hover{ animation: shake 1s alternate infinite; }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

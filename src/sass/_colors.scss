@@ -1,0 +1,48 @@
+@import "_colors/_color-palette";
+
+$facebook: #3b5998;
+$twitter: #39aef4;
+$xing: #007174;
+$linkedin: #2c6088;
+$instagram: #e1306c;
+$youtube: #cd201f;
+
+//primärfarben
+$primary-color: #333;
+
+//sekundärfarben
+$secondary-color: #ddd;
+
+
+
+//highlight-farbe 1
+$highlight-color-1: #ddd;
+
+//highlight-farbe 2
+$highlight-color-2: $highlight-color-1;
+
+//highlight-farbe 3
+$highlight-color-3: $highlight-color-1;
+
+//highlight-farbe 4
+$highlight-color-4: $highlight-color-1;
+
+
+//grautöne
+$light-gray: #eee;
+$dark-gray: #777;
+
+$body-background: #f9f9f9;
+
+%gradient{
+	$startcolor: lighten($highlight-color-1, 7.5%);
+	$endcolor: darken($highlight-color-1, 20%);
+
+	background: $highlight-color-1;
+	background: linear-gradient(to bottom, $startcolor 0%, $highlight-color-1 44%, $endcolor 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startcolor', endColorstr='$endcolor', GradientType=0 ); /* IE6-9 */
+}
+
+.white{ background-color: $white; }
+
+@import "_colors/_patterns";

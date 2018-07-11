@@ -1,0 +1,30 @@
+.mosaic{}
+
+.mosaic__element{
+	display: flex;
+	flex-direction: row;
+	
+	@include breakpoint($breakpoint-small) { flex-direction: column; }
+
+	align-items: center;
+
+	&:nth-child(2n){ 
+		flex-direction: row-reverse;
+		@include breakpoint($breakpoint-small) { flex-direction: column; } 
+	}
+}
+
+.mosaic__image,
+.mosaic__content{
+	@include breakpoint($breakpoint-small) { width: 100%; }
+	width: 50%;
+}
+
+.mosaic__image{
+	img{ @extend %fleximage; }
+}
+
+.mosaic__content{
+	padding: 0 1em;
+	@include breakpoint($breakpoint-small) { padding: 1em 0; }
+}

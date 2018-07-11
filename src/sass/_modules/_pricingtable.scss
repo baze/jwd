@@ -1,0 +1,108 @@
+.pricingtable{
+	@extend %center;
+
+	display: flex;
+	flex-direction: column;
+	@include breakpoint($breakpoint-medium) { flex-direction: row; }
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.pricingtable__entry{
+	@include breakpoint($breakpoint-small) {
+		& + &{ margin-top: gutter(); }
+	}
+
+	position: relative;
+	z-index: 1;
+	background-color: $white;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	border: 1px solid $light-gray;
+	text-align: center;
+
+	&.pricingtable__entry--highlight{ 
+		@include breakpoint($breakpoint-medium) {
+			transform: scale(1.05);
+			z-index: 2;
+		} 
+	}
+}
+
+.pricingtable__price,
+.pricingtable__content,
+.pricingtable__action{
+	padding: 1em 2em;
+}
+
+.pricingtable__header{
+	
+	.pricingtable__entry--highlight &{ 
+		background-color: $highlight-color-1;
+		& > *{ color: $white; }		
+	}
+
+	@include breakpoint($breakpoint-small) {
+		@include angle-edge($angle: 1.05, $angle-position-y: 'bottom', $angle-position-x: 'right');		
+	}
+
+	@include angle-edge($angle: 0.65, $angle-position-y: 'bottom', $angle-position-x: 'right');
+
+	padding: 2.25em 2em;
+	margin-bottom: -1.5em; 
+
+	background-color: darken($light-gray, 3.25%);
+
+	& > *{ 
+		margin: 0;
+		line-height: 1;
+		font-size: 150%;
+		font-weight: $font-weight-light;
+		text-transform: uppercase;
+	}
+}
+
+.pricingtable__price{
+	padding: 2.25em 2em 0.75em 2em;
+	background-color: lighten( $light-gray, 3.25%);
+
+	.pricingtable__entry--highlight &{ color: $highlight-color-1; }
+
+	& > *{ font-weight: $font-weight-light; }
+}
+
+.pricingtable__currency{}
+
+.pricingtable__amount{
+	font-size: 250%;
+	
+	small{
+		
+		&:before{ 
+			[lang="de"] &{ content: ","; }
+			[lang="en"] &{ content: "."; } 
+		}
+
+		font-size: 50%; 
+	}
+}
+
+.pricingtable__interval{
+	&:before{ content: "/"; }
+}
+
+.pricingtable__content{
+	@extend %reset;
+}
+
+.pricingtable__feature{
+	padding: 0.5em 0;
+	color: lighten($primary-color, 25%);
+	strong{ color: $primary-color; }
+}
+
+.pricingtable__action{}

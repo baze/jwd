@@ -1,0 +1,126 @@
+body {
+  font-family: $primary-font;
+  color: $primary-color;
+  font-weight: $font-weight-medium;
+}
+
+p{
+	margin: 0;
+	padding: 0;
+	
+	& + &{ margin-top: 1.5em; }
+	
+	abbr{font-style: italic; font-weight: $font-weight-bold;}
+	b, strong{font-weight: $font-weight-bold;}
+	cite{font-style: italic;}
+	cite:before,
+	q:before{content:"";}
+	cite:after,
+	q:after{content:"";}
+	code{font-family: $monospace-font;}
+	em, dfn, i{font-style: italic;}
+	del{}
+	ins{}
+	kbd{font-family: $monospace-font; text-transform: uppercase; background-color: #ddd; padding: 0 0.45em;}
+	mark{background:yellow;}
+	q{}
+	s{}
+	samp{font-family: $monospace-font;}
+	big{font-size: 125%;}
+	small{font-size: 75%;}
+	span{}
+	sub{font-size: 75%; vertical-align: text-top;}
+	sup{font-size: 75%; vertical-align: text-bottom;}
+	u{}
+	var{font-family: $monospace-font;}
+
+	ul, ol{ list-style: disc; }
+	ul{ list-style: circle outside none; }
+	ol{ list-style: decimal outside none;}
+
+}
+
+.hyphenate, .hyphenate *{ text-align: justify !important; }
+
+pre, code{ 
+	font-family: $monospace-font;
+}
+
+code{
+	@extend %hide-scrollbars;
+	display: block;
+	background-color: #333;
+	padding: 1rem 0.75rem;
+	color: $light-gray;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+
+address{}
+
+blockquote{
+	position: relative;
+	font-style: italic;
+	color: #999;
+	padding: 1.5rem;
+	font-size: 125%;
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0) !important;
+
+	&:before{
+		position: absolute;
+		font-size: 450%;
+		display: inline-block;
+
+		top: -1.25rem;
+		left: -1.25rem;
+		content: "”";
+	}
+
+
+}
+
+dl{ display: block; }
+
+details{
+	background: #ddd;
+	
+	summary{font-weight: $font-weight-bold;}
+	div{
+		p{font-style: italic;}
+	}
+	ul{ 
+		list-style-type: upper-roman;
+		li{}
+	}	
+}
+
+details[open]{
+	background: #ddd;
+	border: 1px solid  #777;
+}
+
+figure{
+	@extend %reset;
+	img{width: 100%;}
+	figcaption{
+		color: #777;
+		padding: 0.45em;
+		h4{
+			font-size: 1em;
+			margin: 0;
+		}
+	}
+}
+
+table{
+	font-family: $secondary-font;
+	text-align: left;
+	caption{}
+	thead{ border-bottom:1px solid #777; }
+	tbody{}
+	tfoot{}
+	tr{}
+	th{font-weight: $font-weight-bold;}
+	td{}
+}

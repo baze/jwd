@@ -1,0 +1,201 @@
+{
+    "key": "group_5ab8c557cf32a",
+    "title": "Blog",
+    "fields": [
+        {
+            "key": "field_5ab8c55c9d01e",
+            "label": "Darstellung",
+            "name": "posts__look",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5ab8c6e20edea",
+                    "label": "Wie sollen die Beiträge aussehen?",
+                    "name": "posts__look__classes",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "card--white": "Weißer Hintergrund",
+                        "card--color": "Grauer Hintergrund",
+                        "card--negative": "Farbiger Hintergrund",
+                        "card--raised": "Hervorgehoben",
+                        "card--hover": "Mouseover-Effekt",
+                        "card--icon": "Mit Icon",
+                        "card--noborder": "Ohne Rahmen",
+                        "card--nopadding": "Ohne Innenabstand",
+                        "card--inline card--left": "Linksbündig",
+                        "card--right card--right": "Rechtsbündig",
+                        "card--inline card--isolated": "Alleinstehend"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ab8cc1e2b47a",
+                    "label": "Wie viele Beiträge pro Zeile? (nur Desktop)",
+                    "name": "posts__look__grid",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5a85aa09985ff"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5ab8c5789d01f",
+            "label": "Query",
+            "name": "posts__query",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5ab8c837d02d5",
+                    "label": "Wie viele Beiträge pro Seite?",
+                    "name": "posts__query__qty",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 10,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5ab8c89fd02d6",
+                    "label": "Wie sollen die Beiträge angezeigt werden?",
+                    "name": "posts__query__order",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "ASC": "Aufsteigend (älteste zuerst)",
+                        "DESC": "Absteigend (neueste zuerst)"
+                    },
+                    "default_value": [
+                        "DESC"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ab8c966d02d7",
+                    "label": "Wie sollen die Beiträge angeordnet werden?",
+                    "name": "posts__query__orderby",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "author": "Beitragsautor (alphabetisch)",
+                        "title": "Titel (alphabetisch)",
+                        "date": "Veröffentlichungsdatum",
+                        "modified": "Zuletzt bearbeitet"
+                    },
+                    "default_value": [
+                        "ID"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1522061325
+}

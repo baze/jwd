@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "_colors";
+@import "_helpers";
+@import "_typography";
+@import "../../bower_components/normalize-scss/normalize";
+@import "_ui";
+@import "_settings";
+@import "_globals";
+@import "_modules";
+@import "_content";
+@import "_plugins";
+@import "_wordpress";
+@import "_woocommerce";
+
+$primary-font: 'sans-serif' !default;
+$secondary-font: 'sans-serif' !default;
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}

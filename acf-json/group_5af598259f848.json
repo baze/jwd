@@ -1,0 +1,357 @@
+{
+    "key": "group_5af598259f848",
+    "title": "Aussehen Footer",
+    "fields": [
+        {
+            "key": "field_5af5990c0dc21",
+            "label": "Farbe, Text und Logo",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5af59e934ef45",
+            "label": "Footer-Logo",
+            "name": "footer__logo",
+            "type": "textarea",
+            "instructions": "Hier bitte SVG-Datei hineinkopieren.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5af598500dc1e",
+            "label": "Hintergrundfarbe",
+            "name": "footer__background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#333"
+        },
+        {
+            "key": "field_5af598cc0dc20",
+            "label": "Textfarbe",
+            "name": "footer__text",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fff"
+        },
+        {
+            "key": "field_5af598800dc1f",
+            "label": "Textausrichtung",
+            "name": "footer__textalign",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Linksbündig",
+                "right": "Rechtsbündig",
+                "center": "Zentriert"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5af5991f0dc22",
+            "label": "Layout",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b44bda502097",
+            "label": "Footer-Elemente",
+            "name": "footer__elements",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5b44bdc9249e2": {
+                    "key": "5b44bdc9249e2",
+                    "name": "footer__elements__logo",
+                    "label": "Footer-Logo",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bf670209d",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b44beba02098": {
+                    "key": "5b44beba02098",
+                    "name": "footer__elements__menu",
+                    "label": "Footer-Menü",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bfa30209e",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b44becc02099": {
+                    "key": "5b44becc02099",
+                    "name": "footer__elements__social",
+                    "label": "Social Media",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bfb60209f",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b44beea0209a": {
+                    "key": "5b44beea0209a",
+                    "name": "footer__elements__company",
+                    "label": "Firmeninformationen",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bfc8020a0",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b44bf000209b": {
+                    "key": "5b44bf000209b",
+                    "name": "footer__elements__openinghours",
+                    "label": "Öffnungszeiten",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bfd7020a1",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b44bf290209c": {
+                    "key": "5b44bf290209c",
+                    "name": "footer__elements__text",
+                    "label": "Freitext",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b44bfe9020a2",
+                            "label": "Spaltenbreite",
+                            "name": "footer__elements__columns",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a85aa09985ff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5b44c007020a3",
+                            "label": "Freitextfeld",
+                            "name": "footer__elements__text__entry",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Eintrag hinzufügen",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-footer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1531232316
+}

@@ -1,0 +1,28 @@
+.page-template-_template-danke{
+	.shop-bar{ display: none; }
+
+	.shop-bar.active + .wrapper,
+	.wrapper{ margin-top: 0; }
+
+	.page-title{ 
+		text-align: center;
+		font-weight: $font-weight-bold;
+		color: $white;
+		background-color: $highlight-color-1;
+		padding: 0.35em 0.5em; 
+	}
+}
+
+._content-danke{ 
+	font-size: 125%;
+	margin-bottom: 2.5rem; 
+}
+
+.file-download{ 
+	margin-top: 1.5em;
+	text-align: center; 
+}
+
+.file-download-link{ 
+	@extend %cta-pos;
+}

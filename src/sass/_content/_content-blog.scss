@@ -1,0 +1,7 @@
+.blog ._snippet-breadcrumb{ display: none; }
+
+._snippet-breadcrumb{ font-size: 0.75em; }
+
+.blog-entries{
+	@extend %clear;
+}

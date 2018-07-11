@@ -1,0 +1,23 @@
+.headroom{ 
+  @extend %z-layer-modal;
+  @extend %transition;
+}
+
+
+.headroom--top {}
+
+.headroom--not-top {
+  position: fixed;
+  backface-visibility: none;
+
+  .off-canvas-controls{
+    @extend %reset;
+    display: block; 
+    height: 0; 
+    overflow: hidden; 
+  }
+
+}
+
+.headroom--pinned {}
+.headroom--unpinned {}

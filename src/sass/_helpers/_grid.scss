@@ -1,0 +1,136 @@
+@import "../../node_modules/susy/sass/_susy";
+
+$grid-max-width: 1140px;
+$grid-inner-width: 1024px;
+
+$columns: 12;
+$gutters: 0.25;
+
+$susy: (
+  'columns': susy-repeat($columns),
+  'gutters': $gutters,
+  'spread': 'wide',
+  'container-spread': 'wide',
+);
+
+.container{ 
+    @extend %clear;
+    padding: 0 1rem;
+    margin: 0 auto;
+    max-width: $grid-max-width; 
+}
+
+.container__inner{
+  max-width: $grid-inner-width;
+  margin: 0 auto;
+}
+
+.grid{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include breakpoint($breakpoint-small-medium) { 
+        
+        flex-direction: row;
+
+        $start: 1;
+        $end: 12;
+
+        @for $columns from $start through $end{
+            $ratio: ( $end / $columns );
+
+            &.grid-#{$columns}{
+                .grid-item{ 
+                  width: ( span( $columns of $end ) - gutter() ); 
+                  flex-basis: ( span( $columns of $end ) - gutter() ); 
+                  flex-shrink: 1; 
+                  margin-top: gutter(); 
+                  padding: gutter() / 2;
+                  margin-right: gutter();
+                  &:nth-child(#{$ratio}n){ margin-right: 0; }                  
+                }
+                
+            }
+        }
+
+    }
+
+    &.grid-custom{ 
+      .grid-item{ margin-right: 1.5em; }
+    }
+
+    &.grid--top{
+      margin-top: 1.5em;
+    }
+
+}
+
+.grid-item{
+  @include breakpoint($breakpoint-small) { margin-top: 1.25em; }
+ }
+
+.row{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  @include breakpoint($breakpoint-small-medium) { flex-direction: row; }
+
+  & + &{ margin-top: gutter() * 2; }
+
+  & .column:last-child(){ margin-right: 0; }
+
+}
+
+.column{
+
+  @include breakpoint($breakpoint-small-medium) { 
+    $start: 1;
+    $end: 12;
+
+    @for $columns from $start through $end{
+        &.columns-#{$columns}{
+            width: span( $columns of $end ) - gutter(); 
+            flex-basis: span( $columns of $end ) - gutter(); 
+            flex-shrink: 0; 
+            padding: gutter() / 2;
+            margin-right: gutter();
+        }
+    }
+  }
+
+}
+
+.row-horizontal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 !important;
+    align-content: stretch;
+    min-height: 100%;
+
+   .contentbox-footer.column{
+        position: relative;
+        padding: 0.25em 0.5em;
+   }
+    
+    .column:first-child,
+    .column:last-child{ width: 100%; }
+
+    .column:first-child{
+        align-self: flex-start;
+    }
+
+    .column:last-child{
+        align-self: flex-end;
+    }
+
+    .column + .column{
+       margin-top: gutter();
+       margin-left: 0;
+    }
+}

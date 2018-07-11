@@ -1,0 +1,45 @@
+.faq{
+	margin: 1.5rem 0;
+}
+
+.faq__question{
+	@extend %transition;
+	font-size: 125%;
+	font-weight: 700;
+
+	.js .faq--expandable &{
+		position: relative;
+		cursor: pointer;
+		
+		&:after{ 
+			content: "+";
+			position: absolute;
+			right: 0; 
+		}
+
+		&.active:after{
+			content: "-";
+		}
+	}
+
+	.faq__answer + &{ 
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid $light-gray; 
+	}
+}
+
+.faq__answer{
+	@extend %transition;
+
+	.js .faq--expandable &{
+		max-height: 0;
+		overflow: hidden;
+
+		&.expanded{ 
+			max-height: 999vh;
+			overflow: auto;
+		}		
+	}
+	margin: 0;
+}

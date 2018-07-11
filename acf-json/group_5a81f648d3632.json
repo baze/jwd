@@ -1,0 +1,159 @@
+{
+    "key": "group_5a81f648d3632",
+    "title": "Cards",
+    "fields": [
+        {
+            "key": "field_5a8202c8e8bb1",
+            "label": "Aussehen",
+            "name": "card-classes",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "card--centered": "Zentrierter Text",
+                "card--white": "Weißer Hintergrund",
+                "card--color": "Grauer Hintergrund",
+                "card--negative": "Farbiger Hintergrund",
+                "card--raised": "Hervorgehoben",
+                "card--hover": "Mouseover-Effekt",
+                "card--icon": "Mit Icon",
+                "card--noborder": "Ohne Rahmen",
+                "card--nopadding": "Ohne Innenabstand",
+                "card--inline card--left": "Linksbündig",
+                "card--inline card--right": "Rechtsbündig",
+                "card--inline card--isolated": "Alleinstehend"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a81f7cb5fe95",
+            "label": "Bild-Element",
+            "name": "card__image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a81f83110912",
+            "label": "Überschrift",
+            "name": "card__headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a81f864b0c79",
+            "label": "Inhalt",
+            "name": "card__content",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5a81f8a5c7a9e",
+            "label": "Link",
+            "name": "card__link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5a81f9183617b",
+            "label": "Link-Beschreibung",
+            "name": "card__link__text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1530816898
+}

@@ -1,0 +1,39 @@
+{
+    "key": "group_5ab66e1357d5a",
+    "title": "Seitenfarbe",
+    "fields": [
+        {
+            "key": "field_5ab66e1f971a4",
+            "label": "Seitenfarbe",
+            "name": "site__color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-design"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1530774392
+}

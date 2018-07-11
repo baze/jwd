@@ -1,0 +1,46 @@
+{
+    "key": "group_5af920cd11e6f",
+    "title": "Ansprechpartner Widget",
+    "fields": [
+        {
+            "key": "field_5af940351c256",
+            "label": "Ansprechpartner",
+            "name": "contact__entries",
+            "type": "post_object",
+            "instructions": "Erscheinen in der Sidebar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ansprechpartner"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "_templates\/flexible-content.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1526284854
+}

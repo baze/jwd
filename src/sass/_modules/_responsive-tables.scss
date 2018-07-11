@@ -1,0 +1,27 @@
+.responsive-table__wrapper{
+	@extend %table-reset;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.responsive-table__scroller{
+	overflow: scroll;
+	overflow-y:  hidden;
+}
+
+.responsive-table{
+	text-align: center;
+	@include breakpoint($breakpoint-small) { table-layout: fixed; }
+}
+
+.responsive-table__body{}
+
+.responsive-table__row{
+	& + &{ border-top: 1px solid lighten($primary-color, 35%) !important; } 
+}
+
+.responsive-table__cell{
+	width: span( 1 of 4 );
+	height: span( 1 of 4 );
+	border-left: 1px solid lighten($primary-color, 35%) !important;
+}

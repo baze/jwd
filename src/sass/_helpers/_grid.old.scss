@@ -1,0 +1,91 @@
+@import "../../bower_components/susy/sass/susy";
+
+$grid-max-width: 1140px;
+$grid-inner-width: 1024px;
+
+$susy: (
+    flow: ltr,
+    math: fluid,
+    output: float,
+    gutter-position: after,
+    container: $grid-max-width,
+    container-position: center,
+    columns: 16,
+    gutters: 0.25,
+    column-width: false,
+    global-box-sizing: border-box,
+    last-flow: to,
+);
+
+.container{ 
+    @extend %clear;
+    @include container();
+    padding: 0 1rem;
+    margin: 0 auto;
+    max-width: $grid-max-width; 
+}
+
+.container__inner{
+    @include container($grid-inner-width);
+}
+
+.row{
+    
+    & + &{ margin-top: gutter(); }
+
+    @include breakpoint($breakpoint-small-medium) { 
+        display: flex;
+        flex-wrap: wrap; 
+    }
+}
+
+.column{
+    
+    :not(.overflow-pattern) &{
+
+        @include breakpoint($breakpoint-small) {
+            & + &{ margin-top: gutter(); }
+        }
+
+    }
+
+    @include breakpoint($breakpoint-small-medium) {
+        & + &{ margin-left: gutter(); }
+        
+        $start: 1;
+        $end: 12;
+
+        @for $columns from $start through $end{
+            &.columns-#{$columns}{ width: span( $columns of $end ); flex-basis: span( $columns of $end );  }
+        }
+    }
+}
+
+.layout{
+    & + &{ margin-top: 2.5rem; }
+}
+
+.grid{
+    @extend %clear;
+
+    padding-bottom: gutter();
+    
+    @include breakpoint($breakpoint-small-medium) { 
+
+        $start: 1;
+        $end: 12;
+
+        @for $columns from $start through $end{
+            &.grid-#{$columns}{
+                .grid-item{ @include gallery( $columns of $end ); }
+            }
+        }
+
+    }
+
+
+}
+
+.grid-item{ 
+    margin-top: gutter();
+} 

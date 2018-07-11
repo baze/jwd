@@ -1,0 +1,9 @@
+.menu{ 
+	@extend %reset;
+}
+
+.menu__cta{
+	@extend %btn-base;
+	@extend .btn--negative;
+	//@include breakpoint($breakpoint-medium) { @extend .btn--border; }
+}

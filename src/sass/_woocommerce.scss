@@ -1,0 +1,116 @@
+.shop-bar{
+	&:empty{ display: none; }
+	&.active{ 
+		background-color: $primary-color; 
+		color: #eee;
+		position: absolute;
+		//position: sticky;
+		top: 0;
+		width: 100%;
+		z-index: 999999;
+
+		.admin-bar &{ top: 32px; }
+		& + .header{ margin-top: 2.75em; }
+	}
+}
+
+.shop-bar-menu{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 2.75em;
+	padding: 0 1em; 
+	.menu-item{ margin-left: 0.75em; }
+}
+
+.section{
+	.woocommerce-page &,
+	.woocommerce &{
+		@include breakpoint($breakpoint-medium) {
+			padding-top: 4em;
+			padding-bottom: 4em;
+		}
+	}
+}
+
+[itemprop="description"]{
+	font-size: 0.85em;
+	line-height: 1.4;
+
+	p:after{
+		display: inline;
+		content: "...";
+		margin-left: 0.25em;
+	}
+
+	.no-description &{ display: none; }
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price,
+.woocommerce ul.products li.product .price{ 
+	font-size: 1.25rem; 
+	margin-bottom: 0;
+	color: $highlight-color-1; 
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale{
+	width: 6em;
+	height: 6em;
+	line-height: 6em;
+	//background-color: invert($highlight-color-1);
+}
+
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt{
+	background-color: $highlight-color-1;
+}
+
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover{
+	background-color: darken($highlight-color-1, 5%);
+}
+
+.woocommerce-info{
+	border-top-color: $highlight-color-1;
+	&:before{ color: $highlight-color-1; }
+}
+
+.woocommerce table.shop_table{ background-color: $white; }
+
+#add_payment_method #payment, 
+.woocommerce-cart #payment, 
+.woocommerce-checkout #payment{
+	background-color: $white;
+}
+
+#add_payment_method #payment div.payment_box, 
+.woocommerce-cart #payment div.payment_box, 
+.woocommerce-checkout #payment div.payment_box{
+	background-color: #eee;
+}
+
+#add_payment_method #payment div.payment_box::before, 
+.woocommerce-cart #payment div.payment_box::before, 
+.woocommerce-checkout #payment div.payment_box::before{
+	border: 1em solid #eee;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+.order-total .amount{ color: $highlight-color-1; }
+
+.sku_wrapper,
+.posted_in{
+	
+	display: block;
+	font-weight: $font-weight-bold;
+	
+	.sku,
+	[rel="tag"]{ font-weight: $font-weight-light; }
+}

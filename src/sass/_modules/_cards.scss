@@ -1,0 +1,118 @@
+.card{ 
+	border: 1px solid $light-gray;
+
+	&.contact{ 
+		padding: 1em;
+
+		.sidebar &{ font-size: 0.85em; } 
+	}
+}
+
+.card__image{
+	
+	.contact &{ 
+		border-radius: 50%; 
+		border: 1px solid #eee; 
+		overflow: hidden; 
+		max-width: 156px; 
+
+		.sidebar &{ 
+			max-width: 128px;
+		}
+	}
+
+	img{ @extend %fleximage; }
+}
+
+.card__content{
+	padding: 0.75em;
+}
+
+.card--centered{ text-align: center; }
+
+.card--white{ background-color: $white; }
+
+.card--icon{
+	.card__image{
+		padding: 0.75em;
+		img{ display: inline-block; width: auto; }
+	} 
+}
+
+.card--noborder{ 
+	border: 0px solid rgba(0,0,0,0); 
+}
+
+.card--nopadding{
+	.card__image,
+	.card__content{ padding: 0; }
+}
+
+.card--inline{
+	@include breakpoint($breakpoint-medium) {
+		display: flex;
+		align-items: center;
+		&.contact{ 
+			justify-content: space-around;
+			.sidebar &{ 
+				flex-direction: column;
+				justify-content: space-between;
+				align-content: flex-start;
+				} 
+		}
+		& + &{ border-top: 0px solid rgba(0,0,0,0); }
+	}
+}
+
+.card--left{ flex-direction: row; }
+
+.card--right{ flex-direction: row-reverse; text-align: right; }
+
+.card--color{
+	background-color: $light-gray;
+}
+
+.card--isolated{
+	.card + &{ margin-top: gutter(); }
+	& + .card{ margin-top: gutter(); }
+	& + .card:not(.card--negative),
+	& + .card:not(.card--color){ border-top: 1px solid $light-gray;  }
+}
+
+.card--negative{
+	background-color: $highlight-color-1;
+	color: $white;
+	h1,h2,h3,h4,h5,h6{ color: $white; }
+
+	.btn{
+		color: $white;
+		border-color: $highlight-color-1;
+
+		&:hover{ 
+			background-color: $highlight-color-1;
+			color: lighten($highlight-color-1, 20%); 
+		}
+
+		&:active{
+			color: $white;
+			background-color: lighten($highlight-color-1, 20%);
+		}
+	}
+}
+
+.card--raised{
+	@extend %box-shadow;
+	@extend .card--isolated;
+	border: 0px solid rgba(0,0,0,0);
+}
+
+.card--hover{
+	@extend %transition;
+	@extend %box-shadow-hover;
+
+	&:hover{
+		border: 0px solid rgba(0,0,0,0);
+		@extend .card--isolated;
+	}
+
+}

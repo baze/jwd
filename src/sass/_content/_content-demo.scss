@@ -1,0 +1,52 @@
+.demo-description{
+	@extend .container;
+	font-size: 125%;
+	padding: 6em 0;
+}
+
+.demo-form{
+	padding: 6em 0;
+	background-color: $highlight-color-1;
+	
+	.download-form-headline,
+	.download-form-excerpt{ 
+		color: $white;
+		text-align: center; 
+	}
+
+	.download-form{ @extend .container; }
+
+	.form-field-container{
+		@extend %clear;
+	}
+
+	.demo-form-field{
+		 @include breakpoint($breakpoint-small) { margin-top: 1.5em; } 
+		 @include breakpoint($breakpoint-small-medium) { @include gallery( 4 of 12 ); }
+	}
+	
+	.form-submit{
+		margin-top: 1.5em;
+		font-size: 125%;
+	}
+
+	input[type="submit"]{
+		@extend %transition;
+		background-color: $highlight-color-1;
+		color: $white;
+		border: 1px solid $white;
+
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 100%;
+		
+		@include breakpoint($breakpoint-small-medium) { max-width: 55%; }
+
+		&:hover{
+			letter-spacing: 0.025em;
+			background-color: $white;
+			color: $highlight-color-1;
+		}
+	}
+}

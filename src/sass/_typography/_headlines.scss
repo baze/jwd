@@ -1,0 +1,16 @@
+
+h1, h2, h3, h4, ,h5, h6{
+	font-family:$secondary-font;
+	font-weight: $font-weight-bold;
+  	letter-spacing: 0.025em;
+  	line-height: 1.2;
+	margin: 0;
+	color: $primary-color;
+ 	margin-bottom: 0.5em;
+  
+  	p + &{ margin-top: 1.5rem; }
+}
+
+.headline--color{ color: $highlight-color-1; }
+
+.headline--center{ text-align: center; }

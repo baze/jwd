@@ -1,0 +1,94 @@
+{
+    "key": "group_5af5a9b9bfbd1",
+    "title": "Webseitenlayout",
+    "fields": [
+        {
+            "key": "field_5af5a9c264f3a",
+            "label": "Volle Breite",
+            "name": "volle_breite",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Webseite in voller Breite anzeigen?",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5af5ac2d6c292",
+            "label": "Maximale Breite",
+            "name": "body__maxwidth",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "in Pixel",
+            "min": 1024,
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5af5a9e964f3b",
+            "label": "HTML Hintergrund",
+            "name": "html__background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5af5aa0864f3c",
+            "label": "Body Hintergrund",
+            "name": "body__background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-design"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1530774407
+}

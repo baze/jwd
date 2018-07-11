@@ -1,0 +1,43 @@
+table{
+	width: 100%;
+	max-width: 100%;
+	
+	@include breakpoint($breakpoint-small) { display: flex; }
+
+}
+
+thead{
+	@include breakpoint($breakpoint-small) { 
+		flex-shrink: 0;
+		table &{ border: 0px solid transparent; } 
+	}
+}
+
+th, td{ 
+	padding: 0 0.25em; 
+	@include breakpoint($breakpoint-small) { &:nth-child(even){ background-color: #eee; } }
+}
+
+th{
+	@include breakpoint($breakpoint-small) { display: block; }
+}
+
+tbody{
+	@include breakpoint($breakpoint-small) { 
+		flex-grow: 1; 
+		display: flex; 
+	}
+}
+
+tr{
+	height: 3.25em;
+	@include breakpoint($breakpoint-small-medium) {
+		&:nth-child(even){ background-color: #eee; }
+		flex-grow: 1;
+		height: 2.5em; 
+	}
+}
+
+td{
+	@include breakpoint($breakpoint-small) { display: block; }
+}

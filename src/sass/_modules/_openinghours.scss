@@ -1,0 +1,29 @@
+.openinghours{
+	width: 100%;
+}
+.openinghours__entry{
+	width: 100%;
+
+	@include breakpoint($breakpoint-small) { 
+		& + &{ margin-top: 0.75rem; } 
+	}
+
+	@include breakpoint($breakpoint-small-medium) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+	}	
+
+	span{
+		flex-basis: calc(100% / 4);
+	}
+}
+
+.openinghours__weekday{ 
+	font-weight: bold;
+	display: block;
+	@include breakpoint($breakpoint-small-medium) { margin-right: 0.5rem; }
+}
+

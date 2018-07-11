@@ -1,0 +1,16 @@
+.footer{
+	width: 100%;
+	padding: 6rem 0;
+	font-size: 0.85em;
+
+	.row{
+		@include breakpoint($breakpoint-small-medium) {
+			flex-wrap: wrap;
+		}
+	}
+
+	.column + .column{ 
+		@include breakpoint($breakpoint-small) { margin-top: 1.5rem; }
+	}
+}
+

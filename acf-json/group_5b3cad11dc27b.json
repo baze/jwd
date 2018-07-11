@@ -1,0 +1,58 @@
+{
+    "key": "group_5b3cad11dc27b",
+    "title": "Typographie",
+    "fields": [
+        {
+            "key": "field_5b3cad1eab108",
+            "label": "Primäre Schriftart",
+            "name": "primary__font",
+            "type": "google_font_selector",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Droid Sans"
+        },
+        {
+            "key": "field_5b3cad3fab109",
+            "label": "Sekundäre Schriftart",
+            "name": "secondary__font",
+            "type": "google_font_selector",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Droid Sans"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-design"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1530802976
+}

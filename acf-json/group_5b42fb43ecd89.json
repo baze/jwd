@@ -1,0 +1,81 @@
+{
+    "key": "group_5b42fb43ecd89",
+    "title": "Inhaltsverzeichnis Landingpage",
+    "fields": [
+        {
+            "key": "field_5b42fb68b1f75",
+            "label": "Inhaltsverzeichnis",
+            "name": "landingpage-toc",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Inhaltsverzeichnis anzeigen?",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b42fb9fb1f76",
+            "label": "Welche Überschriften sollen angezeigt werden?",
+            "name": "landingpage-toc__headlines",
+            "type": "select",
+            "instructions": "Wählen Sie die Art der Überschriften aus, die in das Inhaltsverzeichnis aufgenommen werden sollen.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b42fb68b1f75",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6"
+            },
+            "default_value": [
+                "h2"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "_templates\/flexible-content.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1531117039
+}

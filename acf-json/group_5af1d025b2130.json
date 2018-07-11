@@ -1,0 +1,130 @@
+{
+    "key": "group_5af1d025b2130",
+    "title": "Animationseinstellungen",
+    "fields": [
+        {
+            "key": "field_5af2b0474ebed",
+            "label": "Animationen für dieses Element aktivieren?",
+            "name": "animation_active",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Animationen aktivieren",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5af1d04941ba4",
+            "label": "Animationsart",
+            "name": "animation_name",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5af2b0474ebed",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fade": "fade",
+                "fade-up": "fade-up",
+                "fade-down": "fade-down",
+                "fade-left": "fade-left",
+                "fade-right": "fade-right",
+                "fade-up-right": "fade-up-right",
+                "fade-up-left": "fade-up-left",
+                "fade-down-right": "fade-down-right",
+                "fade-down-left": "fade-down-left",
+                "flip-up": "flip-up",
+                "flip-down": "flip-down",
+                "flip-left": "flip-left",
+                "flip-right": "flip-right",
+                "slide-up": "slide-up",
+                "slide-down": "slide-down",
+                "slide-left": "slide-left",
+                "slide-right": "slide-right",
+                "zoom-in": "zoom-in",
+                "zoom-in-up": "zoom-in-up",
+                "zoom-in-down": "zoom-in-down",
+                "zoom-in-left": "zoom-in-left",
+                "zoom-in-right": "zoom-in-right",
+                "zoom-out": "zoom-out",
+                "zoom-out-up": "zoom-out-up",
+                "zoom-out-down": "zoom-out-down",
+                "zoom-out-left": "zoom-out-left",
+                "zoom-out-right": "zoom-out-right"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5af1d0a47c4db",
+            "label": "Animationsverzögerung",
+            "name": "animation_delay",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5af2b0474ebed",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 450,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 1000,
+            "step": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1525856553
+}

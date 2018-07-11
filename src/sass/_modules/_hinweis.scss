@@ -1,0 +1,20 @@
+.shortcode-message{
+	@extend %box-shadow;
+	@include breakpoint($breakpoint-medium) { margin: 1.5em auto; max-width: 70%; }
+	
+	padding: 1em;
+
+	h4{ font-size: 1.45em; }
+
+	p{ 
+		color: #777;
+		font-size: 0.95em;
+		line-height: 1.3;
+	}
+
+	a{ 
+		@include breakpoint($breakpoint-small) { display: block; text-align: center; }
+		font-size: 0.85em; 
+		margin-top: 0.75em; 
+	}
+}
