@@ -60,9 +60,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 		}
 
 		&.active{ 
-			max-height: 999vh;
+			max-height: 999999vh;
 			height: auto;
-			//overflow: visible;
 
 			&:after{ display: none; }
 		} 
