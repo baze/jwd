@@ -258,6 +258,19 @@ function dd($variable){
     echo "</pre>";
 }
 
+function gmaps_api(){
+  $api_key = 'AIzaSyCNkl4VBdK329_kt-DRs-f8GZbypWcITXA';
+  return $api_key;
+}
+
+function my_acf_init() {
+  acf_update_setting('google_api_key', gmaps_api() );
+}
+
+add_action('acf/init', 'my_acf_init');
+
+
+
 //shortcodes
 require get_template_directory() . '/inc/shortcodes.php';
 

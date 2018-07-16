@@ -3,6 +3,27 @@
     "title": "Header",
     "fields": [
         {
+            "key": "field_5b4c99192d100",
+            "label": "Header Logo",
+            "name": "header__logo",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5a81c1047149b"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
             "key": "field_5afc6286ee3b5",
             "label": "Aussehen Header",
             "name": "header__classes",
@@ -20,7 +41,7 @@
                 "header--reverse": "Navigation links, Logo rechts",
                 "header--center": "Logo oben, Navigation darunter (zentriert)",
                 "header--inline": "Logo zentriert, Navigation links und rechts",
-                "header--fixed": "Header mitlaufend"
+                "header--fixed  header--fixed-transparent": "Header mitlaufend"
             },
             "default_value": [],
             "allow_null": 0,
@@ -48,5 +69,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526492812
+    "modified": 1531748724
 }

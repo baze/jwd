@@ -12,8 +12,6 @@
 
 			$footer__elements = get_field('footer__elements', 'option');
 
-			//dd($footer__elements);
-
 			if( have_rows('footer__elements', 'option') ):
 
 			    while ( have_rows('footer__elements', 'option') ) : the_row();
@@ -22,7 +20,7 @@
 			        	
 			        	$columns = get_sub_field('column-width');
 			        	echo '<div class="column columns-' . $columns . '">';
-			        		the_field('footer__logo', 'option');
+			        		get_template_part('_modules/_footer__logo');
 			        	echo '</div>';
 
 			        elseif( get_row_layout() == 'footer__elements__menu' ):

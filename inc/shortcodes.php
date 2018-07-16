@@ -42,7 +42,9 @@ function shortcode_message( $atts ) {
   function global_cta ($slug){
 
     $cta = get_page_by_path( $slug, $output, 'cta' );
+    
     if ( isset( $cta ) ) {
+    
           $cta__id = $cta->ID;
           $global__cta__headline = get_field('global__cta__headline', $cta__id);
           $global__cta__txt = get_field('global__cta__txt', $cta__id);
@@ -50,12 +52,19 @@ function shortcode_message( $atts ) {
           $global__cta__btn = get_field('global__cta__btn', $cta__id);
           $global__cta__img = get_field('global__cta__img', $cta__id);
 
-          echo '<div class="shortcode-message" style="text-align:center;">';
-          if ( $global__cta__img ) { echo '<img src="' . $global__cta__img["url"] . '" alt="'. $global__cta__img["alt"] . '">'; }
-          echo  '<h4>' . $global__cta__headline . '</h4>';
-          echo  '<p>' . $global__cta__txt . '</p>';
-          echo  '<a class="btn btn--negative" target="_blank" href="' . $global__cta__link . '">' . $global__cta__btn . '</a>';
-          echo '</div>';
+          if ( $global__cta__img ) { 
+            $img = '<img src="' . $global__cta__img["url"] . '" alt="'. $global__cta__img["alt"] . '">'; 
+          }
+
+          $opening_tag = '<div class="shortcode-message" style="text-align:center;">';
+          $headline = '<h4>' . $global__cta__headline . '</h4>';
+          $text =  '<p>' . $global__cta__txt . '</p>';
+          $btn = '<a class="btn btn--negative" target="_blank" href="' . $global__cta__link . '">' . $global__cta__btn . '</a>';
+          $closing_tag = '</div>';
+
+          $html = $opening_tag . $img . $headline . $text . $btn . $closing_tag;
+          
+          return $html;
     }
 
 

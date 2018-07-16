@@ -14,6 +14,8 @@
 	@extend %z-layer-ui;
 	position: fixed;
 
+	@include breakpoint($breakpoint-small) { padding-bottom: 46px; }
+
 	:not(.boxed) &{ left: 0; }
 
 	.boxed &{ 
@@ -27,6 +29,22 @@
 
 .header--fixed-transparent{
 	background-color: rgba(0,0,0,0);
+	border-bottom: 1px solid rgba(0, 0, 0, 0);
+
+	.menu__cta{ 
+		border: 1px solid $white !important;
+		background-color: rgba(0,0,0,0) !important; 
+	}
+	
+	.page-template-produkte &,
+	.tax-produktkategorie &,
+	.produkte-template-default &,
+	.woocommerce-page &{
+		border-bottom: 1px solid $light-gray;
+		.header__navigation{
+			a, a:link, a:hover, a:visited, a:active{ color: $primary-color; }
+		}
+	}
 }
 
 .header--fixed-background{
@@ -34,7 +52,6 @@
 	border-bottom: 1px solid $light-gray;
 }
 
-.header--fixed-transparent,
 .header--fixed-background{
 	.shop-bar.active + &{ margin-top: 0 !important; }
 }
@@ -89,6 +106,11 @@
 .header__navigation{
 
 	display: flex;
+	
+	.header--center &{
+		justify-content: center;
+		align-items: center;
+	}
 
 	a{ 
 		&:link, &:hover, &:active, &:visited{ color: $primary-color; } 
@@ -102,6 +124,8 @@
 	}
 
 	.menu__cta{
+		
+		letter-spacing: 0.025em;
 
 		@include breakpoint($breakpoint-small) { border: 1px solid $white; }
 	

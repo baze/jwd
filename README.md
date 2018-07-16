@@ -16,44 +16,51 @@ Brainbox WordPress Theme, Copyright 2018 JWD - Jan Wambach Design. Brainbox is d
 ## Changelog
 1.0
 - Released: March 9, 2018
-Initial release
+    - Initial release
 
 1.2
 - Released April 26, 2018
-Small bugfixes and perfromance improvements
+    - Small bugfixes and perfromance improvements
 
 1.3
 - Released May 18, 2018
-New Modules, small bugfixes
-WooCommerce integration
-Small bugfixes and perfromance improvements
+    - New Modules, small bugfixes
+    - WooCommerce integration
+    - Small bugfixes and perfromance improvements
 
 1.4
 - Released May 25th, 2018
-Added product database
-Small bugfixes and perfromance improvements
+    - Added product database
+    - Small bugfixes and perfromance improvements
 
 1.5
 - Released May 30th, 2018
-Minor fixes
-Added a slider module
-Small bugfixes and perfromance improvements
+    - Minor fixes
+    - Added a slider module
+    - Small bugfixes and perfromance improvements
 
 1.6
 - Released June 5th, 2018
-Added an animation system
-Small bugfixes and perfromance improvements
+    - Added an animation system
+    - Small bugfixes and perfromance improvements
 
 1.7
 - Released June 20th, 2018
-Added personalization options
-Added Webfonts
-Small bugfixes and perfromance improvements
+    - Added personalization options
+    - Added Webfonts
+    - Small bugfixes and perfromance improvements
 
-1.8
+1.8 (current)
 - Released July 8th, 2018
-Completely reworked the grid system
-Small bugfixes and perfromance improvements
-Added new CTA mechanic, separate from the menu
-Added dynamic table of contents for landing pages
-Small bugfixes and perfromance improvements
+    - Completely reworked the grid system
+    - Small bugfixes and perfromance improvements
+    - Added new CTA mechanic, separate from the menu
+    - Added dynamic table of contents for landing pages
+    - Small bugfixes and perfromance improvements
+
+1.9 (upcoming)
+- Release TBA
+    - New Module: Storefinder
+    - Added table content module
+    - Added FAQ content module
+    - Small bugfixes and perfromance improvements

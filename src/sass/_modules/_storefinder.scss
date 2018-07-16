@@ -1,0 +1,72 @@
+.storefinder__map{
+	padding: 10px;
+	border: 1px solid $light-gray;
+	margin: 3.75em 0;
+	.acf-map{ 
+		height: 600px;
+	}
+}
+
+.gm-style-iw{
+	.btn{ font-size: 0.75em; margin-top: 0.25rem; }
+}
+
+.storelist{}
+
+.storelist__location{
+	padding: 3.75em 0;
+	border-top: 1px solid $light-gray; 
+}
+
+.storelist__location__img{
+	img{ @extend %fleximage; }
+	@include breakpoint($breakpoint-small-medium) { 
+		width: susy-span( 6 of 12 );
+		margin-right: gutter();  
+	}
+
+	& + .storelist__location__info{ 
+		@include breakpoint($breakpoint-small-medium) { width: susy-span( 6 of 12 ); }
+	}
+
+}
+
+.storelist__location__info{}
+
+.storelist__location__info__address,
+.storelist__location__info__openinghours,
+.storelist__location__info__contact{
+	margin-top: 1.5em;
+}
+
+.storelist__location__info__headline{}
+
+.storelist__location__info__address{}
+
+.storelist__location__info__openinghours{}
+
+.storelist__location__info__contact{}
+
+.storelist__location__map{}
+
+.storelist__location__map__container{
+	padding: 10px;
+	border: 1px solid $light-gray;
+	
+	@include breakpoint($breakpoint-small-medium) { 
+		width: susy-span( 6 of 12 );
+		margin-right: gutter(); 
+	}
+	
+	.acf-map{ height: 400px; }
+
+}
+
+.storelist__location__map__text{
+	@include breakpoint($breakpoint-small-medium) { width: susy-span( 6 of 12 ); }
+}
+
+.acf-map { width: 100%; }
+
+/* fixes potential theme css conflict */
+.acf-map img { max-width: inherit !important; }

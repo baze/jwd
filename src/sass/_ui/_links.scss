@@ -42,23 +42,5 @@ nav a{
 .sidebar a{ 
 	@extend %link-reset;
 	@extend %transition;
-	color: $highlight-color-1; 
+	color: $highlight-color-1;
 }
-
-// a[rel="prev"],
-// a[rel="next"]{
-// 	text-decoration: none;
-// 	color: $dark-gray;
-// 	background: $primary-color;
-// 	padding: 0 0.25em;
-// 	font-family:$secondary-font;
-// }
-
-// a[rel="prev"]:hover,
-// a[rel="next"]:hover{background: $light-gray;}
-
-// a[rel="prev"]:before,
-// a[rel="next"]:after{margin: 0;}
-
-// a[rel="prev"]{float: left;}
-// a[rel="next"]{float: right;}

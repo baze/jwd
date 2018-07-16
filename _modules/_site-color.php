@@ -47,6 +47,7 @@
 		.headline-transition:before, .headline-transition:hover{ color:<?php echo($site__color); ?>; }
 		.headline-transition:after{ background-color:<?php echo($site__color); ?>; }
 		.faq__question.active, .landingpage-toc .active, blockquote:before, .shortcode-message h4{ color: <?php echo($site__color); ?>;  }
-		.woocommerce ul.products li.product .onsale, .woocommerce span.onsale{ background-color:<?php echo($site__color); ?>; filter: invert(100%); color: #000; }
+		.woocommerce ul.products li.product .onsale, .woocommerce span.onsale{ background-color:<?php echo($site__color); ?>; filter: invert(100%); color: #000;}
+		.page-template-produkte .header--fixed-transparent .menu__cta, .tax-produktkategorie .header--fixed-transparent .menu__cta, .produkte-template-default .header--fixed-transparent .menu__cta, .woocommerce-page .header--fixed-transparent .menu__cta{ background-color:<?php echo($site__color); ?> !important; }
 	</style>
 <?php } ?>

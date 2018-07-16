@@ -22,6 +22,23 @@
             "button_label": "",
             "sub_fields": [
                 {
+                    "key": "field_5b4881c26084b",
+                    "label": "Firma \/ Unternehmen",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_5ab379a4c2cf1",
                     "label": "Firmenname",
                     "name": "company__name",
@@ -374,6 +391,59 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5b4876deb802d",
+                    "label": "Anfahrt",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5b4876f0b802e",
+                    "label": "Anfahrtsskizze",
+                    "name": "company__location__map",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "",
+                    "center_lng": "",
+                    "zoom": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_5b48772ab802f",
+                    "label": "Anfahrtsbeschreibung (optional)",
+                    "name": "company__location__txt",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
                     "key": "field_5ab37eedd0f4f",
                     "label": "Meta-Informationen",
                     "name": "",
@@ -611,5 +681,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531319479
+    "modified": 1531478519
 }

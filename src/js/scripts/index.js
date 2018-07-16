@@ -10,3 +10,4 @@ require('./contact.js')();
 require('./article-toggle.js')();
 require('./faq.js')();
 require('./smoothScroll.js')();
+require('./storefinder.js')();

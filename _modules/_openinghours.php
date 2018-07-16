@@ -2,7 +2,6 @@
 	$companies = get_field('companies', 'options');
 	$openinghours__headline = $companies[0]["openinghours__headline"];
 	$openinghours = $companies[0]["openinghours"];
-	//dd($companies[0]);
 
 	if ( $openinghours ) {
 	echo '<div class="openinghours">';

@@ -16,7 +16,7 @@ if( have_rows('trust-list', 'option') ):
 		<?php 
 			$image = get_sub_field('trust-entry-img');
 		?>
-		<img src="<?php echo($image[url]); ?>" alt="<?php echo($image[description]); ?>" class="trust-entry-img">
+		<img src="<?php echo($image["url"]); ?>" alt="<?php echo($image["description"]); ?>" class="trust-entry-img">
 	<?php } ?>
 
 	<?php if ( get_sub_field('trust-entry-url') ) { ?>

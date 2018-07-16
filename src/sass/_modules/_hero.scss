@@ -2,6 +2,8 @@
 	width: 100%;
 	position: relative;
 	.overlay-active &{ z-index: 0; }
+
+	.woocommerce-js &{ padding-top: 44px; }
 }
 
 .hero--huge{ 

@@ -17,13 +17,19 @@
 	}	
 
 	span{
-		flex-basis: calc(100% / 4);
+		flex-basis: calc(100% / 3);
 	}
 }
 
 .openinghours__weekday{ 
 	font-weight: bold;
 	display: block;
+	flex-basis: 50%;
+	flex-shrink: 0;
 	@include breakpoint($breakpoint-small-medium) { margin-right: 0.5rem; }
 }
 
+.openinghours__spacer{
+	flex-basis: 1em;
+	flex-grow: 0;
+}

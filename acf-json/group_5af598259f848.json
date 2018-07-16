@@ -23,8 +23,8 @@
             "key": "field_5af59e934ef45",
             "label": "Footer-Logo",
             "name": "footer__logo",
-            "type": "textarea",
-            "instructions": "Hier bitte SVG-Datei hineinkopieren.",
+            "type": "clone",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -32,11 +32,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "clone": [
+                "group_5a81c1047149b"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
             "key": "field_5af598500dc1e",
@@ -353,5 +355,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531232316
+    "modified": 1531748562
 }

@@ -30,15 +30,7 @@
 
 	<div class="header__container">
 		
-		<?php if ( get_field('logo', 'option') ) { ?>
-			
-			<div class="header__logo">
-				<a href="<?php echo get_home_url(); ?>?rel=logo&source=<?php echo $slug; ?>">
-					<?php the_field('logo', 'option'); ?>
-				</a>
-			</div>
-
-		<?php } ?>
+		<?php get_template_part('_modules/_header__logo'); ?>
 
 		<?php if ( get_field('searchform', 'option') ) { ?>
 			
