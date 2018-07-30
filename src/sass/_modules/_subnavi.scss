@@ -1,10 +1,25 @@
 .subnavi{
+	position: relative;
 	padding: 0.75em;
 	display: flex;
 	flex-wrap: nowrap;
-	@include breakpoint($breakpoint-small) { overflow-x: scroll; }
 	justify-content: space-between;
 	align-items: center;
+	
+	&:after{
+		@include breakpoint($breakpoint-small) {
+			content: "";
+			height: 100%;
+			width: 40px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255, 0.65) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+		}
+
+	}
+
 }
 
 .subnavi__logo{
@@ -16,8 +31,13 @@
 
 .subnavi__pages{
 	@extend %reset;
+	@extend %hide-scrollbars;
 	color: $white;
 	display: flex;
+	flex-wrap: nowrap;
+	
+	@include breakpoint($breakpoint-small) { overflow-x: scroll; padding-right: 65px; }
+
 }
 
 .subnavi__pages__entry{

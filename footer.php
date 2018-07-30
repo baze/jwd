@@ -15,15 +15,19 @@
 
 		</div>
 
-		<?php if ( !is_front_page()) {  ?>
+		<?php if ( !is_front_page() && !is_page_template('_templates/vorschaltseite.php') ) {  ?>
 		
 			<div class="container trust-container">
 				<?php get_template_part( '_modules/_trust' ); ?>
 			</div>
-
+			
 		<?php } ?>
 
-		<?php get_template_part('_modules/_footer-flexible'); ?>
+		<?php 
+			if ( !is_page_template('_templates/vorschaltseite.php') ) {
+				get_template_part('_modules/_footer-flexible'); 
+			}
+		?>
 
 		<span id="ScriptHook"></span>
 		<?php get_template_part('_modules/_assets'); ?>
@@ -31,6 +35,7 @@
 		<?php wp_footer(); ?>
 		<?php get_template_part('_modules/_slider-assets'); ?>
 		<?php get_template_part('_modules/_animation'); ?>
+		<?php get_template_part('_modules/_custom_css'); ?>
 		
 		
 	</body>

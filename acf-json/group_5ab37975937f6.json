@@ -188,7 +188,7 @@
                     "key": "field_5ab37a84c2cfa",
                     "label": "Telefon",
                     "name": "company__fon",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -201,15 +201,13 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_5ab37a9ac2cfb",
-                    "label": "E-Mail",
-                    "name": "company__email",
-                    "type": "email",
+                    "key": "field_5b5029223ea0a",
+                    "label": "Mobil",
+                    "name": "company__mobile",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -221,7 +219,8 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": ""
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5ab37ab1c2cfc",
@@ -241,6 +240,24 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5ab37a9ac2cfb",
+                    "label": "E-Mail",
+                    "name": "company__email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_5b44ae862363f",
@@ -681,5 +698,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531478519
+    "modified": 1531980794
 }

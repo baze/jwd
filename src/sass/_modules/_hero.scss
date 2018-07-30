@@ -2,8 +2,7 @@
 	width: 100%;
 	position: relative;
 	.overlay-active &{ z-index: 0; }
-
-	.woocommerce-js &{ padding-top: 44px; }
+	.woocommerce-js .header--fixed + &{ padding-top: 44px; }
 }
 
 .hero--huge{ 
@@ -63,8 +62,24 @@
 	@extend .hero--negative;
 	@extend %gradient;
 }
+
 .hero---animated{
-    .hero__background img{ animation: animatedBackground 65s alternate infinite; }
+    .hero__background,
+    .hero__background--dimmed{
+		img{ animation: animatedBackground 65s alternate infinite; }
+    } 
+}
+
+@keyframes animatedBackground {
+    0%, 100% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+
+    50% {
+        -webkit-transform: scale(1.35);
+        transform: scale(1.35)
+    }
 }
 
 .hero__content{
@@ -157,18 +172,6 @@
 }
 
 .hero__background--dimmed{ opacity: 0.5; }
-
-@keyframes animatedBackground {
-    0%, 100% {
-        -webkit-transform: scale(1);
-        transform: scale(1)
-    }
-
-    50% {
-        -webkit-transform: scale(1.35);
-        transform: scale(1.35)
-    }
-}
 
 .flexslider{
 	position: relative; 

@@ -47,8 +47,8 @@
             "button_label": "Layout hinzufügen",
             "sub_fields": [
                 {
-                    "key": "field_5aa9afb2c370a",
-                    "label": "Sektion",
+                    "key": "field_5b51c369e3c74",
+                    "label": "Sektions-Layout",
                     "name": "",
                     "type": "accordion",
                     "instructions": "",
@@ -121,6 +121,23 @@
                     "default_value": ""
                 },
                 {
+                    "key": "field_5b51c37de3c75",
+                    "label": "Container-Layout",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_5a81a4fcc4ff4",
                     "label": "Container",
                     "name": "container-classes",
@@ -161,6 +178,23 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 1
+                },
+                {
+                    "key": "field_5b51c395e3c76",
+                    "label": "Inhalte",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 1,
+                    "multi_expand": 0,
+                    "endpoint": 0
                 },
                 {
                     "key": "field_5a81b10ee19f7",
@@ -777,6 +811,37 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "5b58224a6f6a3": {
+                            "key": "5b58224a6f6a3",
+                            "name": "flex_counter",
+                            "label": "Counter",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b5822576f6a4",
+                                    "label": "Counter",
+                                    "name": "counter",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_5b572e5bc7f0c"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "button_label": "Eintrag hinzufügen",
@@ -810,8 +875,13 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "comments",
+        "format",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1531216984
+    "modified": 1532502813
 }

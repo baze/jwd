@@ -132,6 +132,13 @@ if (!function_exists('jwd_setup')) :
             ));
 
             acf_add_options_sub_page(array(
+                'page_title'    => 'Brainbox: Mega-Menü',
+                'menu_title'    => 'MEGA-Menü',
+                'parent_slug'   => 'theme-general-settings',
+            ));
+    
+
+            acf_add_options_sub_page(array(
                 'page_title'    => 'Brainbox: Web-App',
                 'menu_title'    => 'Web-App',
                 'parent_slug'   => 'theme-general-settings',
@@ -263,13 +270,45 @@ function gmaps_api(){
   return $api_key;
 }
 
+define( 'ACFGFS_API_KEY', gmaps_api() );
+define( 'ACFGFS_REFRESH', 259200 );
+
 function my_acf_init() {
   acf_update_setting('google_api_key', gmaps_api() );
 }
 
 add_action('acf/init', 'my_acf_init');
 
+function acf_load__local__business( $field ) {
+    
+    $field['choices'] = array();
+    
+    $choices = get_field('companies', 'option');
 
+    if( is_array($choices) ) {
+        
+        foreach( $choices as $choice ) {
+            
+            $company = $choice;
+            $name = $choice["company__name"];
+            $field['choices'][ $name ] = $choice["company__name"];
+          
+            
+        }
+        
+    }
+    
+
+    // return the field
+    return $field;
+    
+}
+
+add_filter('acf/load_field/name=select__local__business', 'acf_load__local__business');
+
+
+// acf fields
+//require get_template_directory() . '/inc/acf/acf_complete.php';
 
 //shortcodes
 require get_template_directory() . '/inc/shortcodes.php';
@@ -281,7 +320,7 @@ require get_template_directory() . '/inc/woocommerce-functions.php';
 //require get_template_directory() . '/inc/plugins.php';
 
 //pages
-//require get_template_directory() . '/inc/pages.php';
+require get_template_directory() . '/inc/pages.php';
 
 // custom post types
 //require get_template_directory() . '/inc/cpt/cpt.php';

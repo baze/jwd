@@ -22,9 +22,9 @@
   <?php get_template_part('_modules/_pwa'); ?>
   
   <?php
-    echo "<style>"; 
+    echo '<style type="text/css">'; 
       get_template_part('dest/critical');
-    echo "</style>"; 
+    echo '</style>'; 
   ?>
   <?php wp_head(); ?>
 
@@ -33,11 +33,16 @@
   <?php
 
     get_template_part('_modules/_tag-manager-body'); 
-    include(locate_template('_modules/_shop-bar.php'));
-    include(locate_template('_modules/_header.php'));
-    get_template_part('_modules/_sub-navi'); 
+    
+    if ( !is_page_template('_templates/vorschaltseite.php') ) {
+      include(locate_template('_modules/_shop-bar.php'));
+      include(locate_template('_modules/_header.php'));
+      get_template_part('_modules/_sub-navi'); 
+    }    
+    
+    
 
-    if ( !is_singular( 'post' ) && !is_singular( 'download' ) && !is_singular( 'product' ) && !is_singular( 'produkte' ) && !is_archive() && !is_category() ) {
+    if ( !is_singular( 'post' ) && !is_singular( 'download' ) && !is_singular( 'product' ) && !is_singular( 'produkte' ) && !is_archive() && !is_search() && !is_category() && !is_page_template('_templates/vorschaltseite.php') ) {
 
       if ( get_field('show__slider') ) {
         get_template_part('_modules/_slider');
@@ -60,9 +65,9 @@
   ?>
 
   <?php if ( $shop_description ) { ?>
-      <div class="wrapper">  
+      <div class="wrapper <?php echo $main_classes; ?>">  
   <?php } else { ?>
-      <div class="wrapper no-description">
+      <div class="wrapper no-description <?php echo $main_classes; ?>">
   <?php } ?>
 
     <main class="main <?php echo $main_classes; ?>" role="main" id="main">

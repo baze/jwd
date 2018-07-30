@@ -1,0 +1,60 @@
+{
+    "key": "group_5b4dfea0e38d7",
+    "title": "Eigenes CSS",
+    "fields": [
+        {
+            "key": "field_5b4dfec00b492",
+            "label": "Eigenes CSS",
+            "name": "",
+            "type": "accordion",
+            "instructions": "Hier können Sie eigenes CSS eintragen.\r\n<strong style=\"color: red;\">ACHTUNG:<\/strong>Bitte nutzen Sie dieses Feld nur, wen Sie genau wissen, was sie tun.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b4dff140b493",
+            "label": "Eigene CSS-Regeln",
+            "name": "custom_css",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-design"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1531838268
+}

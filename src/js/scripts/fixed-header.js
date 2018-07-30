@@ -8,7 +8,9 @@ module.exports = function () {
 	const header = $('.header--fixed');
 	var height = header.outerHeight(true);
 
-	hero.css({ "padding-top" : height + 44 });
+/*	if( typeof header !== 'undefined' ) {
+		hero.css({ "padding-top" : height + 44 });
+	}*/
 
 	$(window).scroll(function(){ 
 		

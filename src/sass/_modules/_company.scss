@@ -7,10 +7,15 @@
 .company__name{ font-weight: $font-weight-bold; }
 
 .company__fon,
+.company__mobile,
 .company__fax,
-.company__email{ display: block; }
+.company__email{ 
+	display: block;
+	&:before{ font-weight: 700; } 
+}
 
 .company__fon:before{ content:"fon: "; }
+.company__mobile:before{ content:"mobil: "; }
 .company__fax:before{ content:"fax: "; }
 .company__email:before{ content:"email: "; }
 
@@ -33,7 +38,7 @@
 	.company__vatID{ display: block; }
 
 	.company__representative:before{ content:"Vertretungsberechtigt: "; }
-	.company__vatID:before{ content:"USt.-ID: "; }
+	//.company__vatID:before{ content:"USt.-ID: "; }
 	.company__register__no:before{ content:"Registernummer: "; }
 	.company__court:before{ content:"Registergericht: "; }
 }

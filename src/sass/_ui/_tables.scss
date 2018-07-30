@@ -1,43 +1,35 @@
+.table__wrapper{ 
+	@extend %hide-scrollbars;
+
+	position: relative;
+	max-width: 100%;
+	overflow-x: auto;
+
+}
+
 table{
 	width: 100%;
-	max-width: 100%;
-	
-	@include breakpoint($breakpoint-small) { display: flex; }
-
+	min-width: 100%;
+	@include breakpoint($breakpoint-small) { white-space: nowrap; }
 }
 
-thead{
-	@include breakpoint($breakpoint-small) { 
-		flex-shrink: 0;
-		table &{ border: 0px solid transparent; } 
-	}
-}
+thead{}
 
 th, td{ 
+	@include breakpoint($breakpoint-small) { width: 25%; }
 	padding: 0 0.25em; 
-	@include breakpoint($breakpoint-small) { &:nth-child(even){ background-color: #eee; } }
 }
 
-th{
-	@include breakpoint($breakpoint-small) { display: block; }
-}
+th{}
 
 tbody{
-	@include breakpoint($breakpoint-small) { 
-		flex-grow: 1; 
-		display: flex; 
-	}
+	overflow-x: scroll;
 }
 
 tr{
+	&:nth-child(even){ background-color: #eee; }
 	height: 3.25em;
-	@include breakpoint($breakpoint-small-medium) {
-		&:nth-child(even){ background-color: #eee; }
-		flex-grow: 1;
-		height: 2.5em; 
-	}
+	height: 2.5em; 
 }
 
-td{
-	@include breakpoint($breakpoint-small) { display: block; }
-}
+td{}

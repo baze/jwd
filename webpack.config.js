@@ -47,7 +47,10 @@ module.exports = {
 
             {
               test: /\.js$/,
-              use: { loader: 'babel-loader' }
+              use: { 
+                        loader: 'babel-loader',
+                        query: { presets: ['es2015'] } 
+                    }
             }
 
         ]
@@ -72,7 +75,10 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
     
     module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin({
+            parallel: true,
+            sourceMap: true
+        })
     )
 
 }

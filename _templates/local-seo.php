@@ -1,71 +1,39 @@
 <?php
 /*
-Template Name: Storefinder
+Template Name: Local SEO
 */
 get_header();
 
+	echo '<div class="container"><div class="container__inner">';
+
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-	echo '<div class="container">';
-	
-		$stores = get_field('companies', 'option');
+		$local__business = get_field('select__local__business');
+		$companies = get_field('companies', 'option');
 		$api_key = gmaps_api();
-		$stores__count = 0;
-		$marker__count = 0;
-
 		echo '<script src="https://maps.googleapis.com/maps/api/js?key=' . $api_key . '"></script>';
+		
+		foreach ($companies as $location) {
+			if ($location["company__name"] === $local__business) {
 
-		echo '<div class="storefinder__map">';
+				echo '<div class="store row">';
 
-			echo '<div class="acf-map">';
-				foreach ($stores as $marker) {
-					
-					++$marker__count;
-					$entry = $marker["company__location__map"];
-					
-					if ( is_array ($entry) ) {
-						echo '<div class="marker" data-lat="' . $entry["lat"] . '" data-lng="' . $entry["lng"] . '" >';
-							echo '<div><strong>' . $marker["company__name"] . '</strong></div>';
-							echo '<div>';
-								echo  $marker["company__streetaddress"] . ', ' . $marker["company__zipcode"] . ' ' . $marker["company__city"];
-							echo '</div>';
-							echo '<a class="btn btn--negative" href="#store__location--' . $marker__count . '">Zum Eintrag</a>';
-						echo '</div>';
-					}
-					
-				}
-			echo '</div>';
-
-		echo '</div>';
-
-		echo '<div class="container__inner">';
-
-		echo '<div class="storelist">';
-
-		foreach ($stores as $location) {
-			
-			++$stores__count;
-
-			echo '<article id="store__location--'. $stores__count . '" class="storelist__location">';
-
-					echo '<div class="row">';
-
+					echo '<aside class="store__info column columns-3">';
+						
 						if ( $location["company__image"] ) {
 							echo '<div class="storelist__location__img"><img alt="' . $location["company__name"] . '" title="' . $location["company__name"] . '" src ="' . $location["company__image"] . '"; ></div>';
 						}
 
-						echo '<div class="storelist__location__info">';
-							
-							echo '<h2 class="storelist__location__info__headline">' . $location["company__name"] . '</h2>';
-							
-							echo '<div class="storelist__location__info__address">';
+						echo '<h2 class="storelist__location__info__headline">' . $location["company__name"] . '</h2>';
+
+						echo '<div class="storelist__location__info__address">';
 								
-								echo '<div class="storelist__location__info__address__streetaddress"><span>' . $location["company__streetaddress"] . '</span> <span>' . $location["company__zipcode"] . '</span> <span>' . $location["company__city"] . '</span></div>';																
+								echo '<div class="storelist__location__info__address__streetaddress"><span>' . $location["company__streetaddress"] . ',</span> <span>' . $location["company__zipcode"] . '</span> <span>' . $location["company__city"] . '</span></div>';																
 								
 								echo '<div storelist__location__info__address__country>';
 									
 									if ($location["company__state"]) {
-										echo '<span>' . $location["company__state"] . '</span>,';
+										echo '<span>' . $location["company__state"] . '</span>, ';
 									}
 									
 									if ($location["company__country"]) {
@@ -108,7 +76,7 @@ get_header();
 							echo '</div>';
 
 									
-								}
+							}
 
 							echo '<div class="storelist__location__info__contact">';
 
@@ -130,13 +98,13 @@ get_header();
 
 							echo '</div>';
 
-						echo '</div>';
+					echo '</aside>';
 
-					echo '</div>';
-
-					if ( $location["company__location__map"] ) {
+					echo '<div class="store__content columns columns-9">';
+						
+						if ( $location["company__location__map"] ) {
 					
-						echo '<div class="storelist__location__map row">';
+						echo '<div class="storelist__location__map">';
 
 							echo '<div class="storelist__location__map__container">';
 								echo '<div class="acf-map">';
@@ -150,9 +118,17 @@ get_header();
 
 						echo '</div>';
 
-					}
-			
-			echo  '<script type="application/ld+json">{ "@context": "http://schema.org", "@type": "ProfessionalService", "@id": "' . get_home_url() . '", "name": "' . $location["company__name"] . '", "image": "' . $location["company__image"] . '", "priceRange": "' . $location["company__priceRange"] . '", "address": { "@type": "PostalAddress", "streetAddress": "' . $location["company__streetaddress"] . '", "addressLocality": "' . $location["company__city"] . '", "addressRegion": "' . $location["company__state__short"] . '", "postalCode": "' . $location["company__zipcode"] . '", "addressCountry": "' . $location["company__country"] . '" }, "telephone": "' . $location["company__fon"] . '", "geo": { "@type": "GeoCoordinates", "latitude": ' . $location["company__location__map"]["lat"] . ', "longitude": ' . $location["company__location__map"]["lng"] . '}, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "' . $location["company__rating"]["company__ratingValue"] . '", "bestRating": "100", "worstRating": "1", "ratingCount": "' . $location["company__rating"]["company__ratingCount"] . '"},';
+						}
+
+						echo '<div class="store__copy">';
+							the_content();
+						echo '</div>';
+
+					echo '</div>';
+
+				echo '</div>';
+
+				echo  '<script type="application/ld+json">{ "@context": "http://schema.org", "@type": "ProfessionalService", "@id": "' . get_home_url() . '", "name": "' . $location["company__name"] . '", "image": "' . $location["company__image"] . '", "priceRange": "' . $location["company__priceRange"] . '", "address": { "@type": "PostalAddress", "streetAddress": "' . $location["company__streetaddress"] . '", "addressLocality": "' . $location["company__city"] . '", "addressRegion": "' . $location["company__state__short"] . '", "postalCode": "' . $location["company__zipcode"] . '", "addressCountry": "' . $location["company__country"] . '" }, "telephone": "' . $location["company__fon"] . '", "geo": { "@type": "GeoCoordinates", "latitude": ' . $location["company__location__map"]["lat"] . ', "longitude": ' . $location["company__location__map"]["lng"] . '}, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "' . $location["company__rating"]["company__ratingValue"] . '", "bestRating": "100", "worstRating": "1", "ratingCount": "' . $location["company__rating"]["company__ratingCount"] . '"},';
 			echo '"openingHours":[';
 	  		if ( $openinghours ) {
 				foreach ($openinghours as $day) {
@@ -164,19 +140,14 @@ get_header();
 			}
 			echo ']}}</script>';
 
-
-			echo '</article>';
+			}
 		}
 
-		echo '</div>';
+	endwhile; else: endif;
 
-	endwhile; 
-	
 	echo '</div></div>';
 
-	else:
 
-	endif;
 
 
 get_footer();

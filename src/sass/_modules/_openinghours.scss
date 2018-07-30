@@ -1,6 +1,5 @@
-.openinghours{
-	width: 100%;
-}
+.openinghours{ width: 100%; }
+
 .openinghours__entry{
 	width: 100%;
 
@@ -16,15 +15,13 @@
 		align-items: center;
 	}	
 
-	span{
-		flex-basis: calc(100% / 3);
-	}
+	span{ flex-basis: calc(100% / 3); }
 }
 
 .openinghours__weekday{ 
 	font-weight: bold;
 	display: block;
-	flex-basis: 50%;
+	flex-basis: 50% !important;
 	flex-shrink: 0;
 	@include breakpoint($breakpoint-small-medium) { margin-right: 0.5rem; }
 }

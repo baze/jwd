@@ -1,0 +1,21 @@
+.counter{}
+
+.counter__entry{
+	&.counter--left{ text-align: left; }
+	&.counter--right{ text-align: right; }
+	&.counter--center{ text-align: center; }
+}
+
+.counter__text,
+.counter__number{
+	display: block;
+}
+
+.counter__text{
+	font-size: 105%;
+}
+
+.counter__number{
+	font-size: 4.25em;
+	font-weight: 700;
+}

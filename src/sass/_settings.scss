@@ -2,6 +2,8 @@ html, body {
 	min-height: 100%;
 	max-width: 100%;
 	margin: 0; padding: 0;
+
+	@include breakpoint($breakpoint-small) { max-width: 100%; overflow-x: hidden; }
 }
 
 html{
@@ -12,6 +14,7 @@ html{
 }
 
 body{
+
 	@include breakpoint($breakpoint-medium) {
 		display: flex;
 		flex-direction: column;
@@ -25,6 +28,7 @@ body{
 		margin: 0 auto; 
 	}
 
+	img{ max-width: 100%; }
 	
 }
 
@@ -60,8 +64,12 @@ body{
 	}
 }
 
+.search__results{
+	@extend %list-reset;
+}
+
 .layout{
-	& + &{ margin-top: 1.5rem; }
+	& + &{ margin-top: 1.5rem; } 
 }
 
 .flex__text{
@@ -75,3 +83,5 @@ body{
 	.section--colored & h5,
 	.section--colored & h6{ color: #fff; }
 }
+
+.menu .current-menu-item > a{ font-weight: 700; }

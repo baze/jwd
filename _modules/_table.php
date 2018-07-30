@@ -1,5 +1,5 @@
 <?php 
-echo '<table border="0">';
+echo '<div class="table__wrapper"><table border="0">';
 
               if ( $table['header'] ) {
 
@@ -37,5 +37,5 @@ echo '<table border="0">';
 
               echo '</tbody>';
 
-echo '</table>';
+echo '</table></div>';
 ?>

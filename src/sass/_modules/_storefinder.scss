@@ -16,10 +16,18 @@
 .storelist__location{
 	padding: 3.75em 0;
 	border-top: 1px solid $light-gray; 
+
+	.page-template-local-seo &{ 
+		padding: 0;
+		border: none;
+	}
 }
 
 .storelist__location__img{
 	img{ @extend %fleximage; }
+	
+	@include breakpoint($breakpoint-small) { margin-bottom: 1.5em; }
+
 	@include breakpoint($breakpoint-small-medium) { 
 		width: susy-span( 6 of 12 );
 		margin-right: gutter();  
@@ -63,6 +71,7 @@
 }
 
 .storelist__location__map__text{
+	@include breakpoint($breakpoint-small) { margin-top: 1.5em; }
 	@include breakpoint($breakpoint-small-medium) { width: susy-span( 6 of 12 ); }
 }
 
@@ -70,3 +79,30 @@
 
 /* fixes potential theme css conflict */
 .acf-map img { max-width: inherit !important; }
+
+.store{
+	.storelist__location__img{
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+
+	.storelist__location__map__container,
+	.storelist__location__map__text{ 
+		width: 100%; 
+		margin-bottom: 1.5em; 
+	}
+}
+
+.store__info{
+	font-size: 0.85em;
+	@include breakpoint($breakpoint-small) { margin-bottom: 1.5em; }
+
+	.storelist__location__img {
+		padding: 10px;
+		border: 1px solid $light-gray;
+	}
+}
+
+.store__content{
+	padding-bottom: 4em;
+}

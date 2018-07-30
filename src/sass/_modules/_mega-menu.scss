@@ -1,0 +1,84 @@
+.mega__menu__toggle{
+	@extend %transition;
+	&.active{ font-weight: 700; }
+}
+
+.mega__menu{
+	@extend %transition;
+	position: absolute;
+
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	
+	&.active{ 
+		@extend %box-shadow;
+		@extend %transition;
+
+		opacity: 1;
+		max-height: 99999vh;
+		overflow: visible;
+		background-color: $white;
+		z-index: 10; 
+
+		border-top: 1px solid $light-gray;
+		padding: 2em 0; 
+	}
+
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	@include breakpoint($breakpoint-small-medium) { 
+		flex-direction: row; 
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.mega__menu__section{
+	display: none;
+	padding: 2em;
+
+	h3{
+		.fa{ 
+			margin-right: 0.25em;
+			font-size: 0.85em; 
+		}
+	}
+	
+
+	.active &{ display: block; }
+	
+	@include breakpoint($breakpoint-small-medium) {
+		width: 25%;
+		flex-shrink: 0;
+	}
+}
+
+.mega__menu__list{
+	@extend %list-reset;
+	padding-left: 1.25em;
+}
+
+.mega__menu__entry{
+
+	&.current{ 
+		font-weight: 700;
+		pointer-events: none;
+		&:hover{ letter-spacing: 0; }
+	}
+
+	a{ 
+		@extend %transition;
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis; 
+	}
+
+	&:hover a{ letter-spacing: 0.035em; }
+	
+}

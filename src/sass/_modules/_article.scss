@@ -74,9 +74,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .article__body__toggle{
 	display: none;
-	
+	cursor: pointer;
+
 	.js &{ 
 		display: block;
+				
 		@include breakpoint($breakpoint-medium) { width: 22%; }
 		text-align: center;
 		margin: 0 auto;

@@ -5,6 +5,8 @@
 	$parent = $post->post_parent;
 	$parent_link = get_permalink( $parent );
 
+	$search = get_field('searchform', 'option');
+
 	$site__color = get_field('site__color', 'option');
 	$subnavi = get_field('subnavi__settings', $parent);
 
@@ -18,9 +20,17 @@
 
 ?>
 
-<?php if ( $subnavi["subnavi__show"] ) {  ?>
+<?php if ( $subnavi["subnavi__show"] && $search == true ) {  ?>
+
+	<header class="header subnavi--active search--active <?php echo $header_classes; ?>" id="header" role="header">
+
+<?php } elseif ( $subnavi["subnavi__show"] ) { ?>
 
 	<header class="header subnavi--active <?php echo $header_classes; ?>" id="header" role="header">
+
+<?php } elseif ( $search == true ) { ?>
+
+	<header class="header search--active <?php echo $header_classes; ?>" id="header" role="header">
 
 <?php } else { ?>
 
@@ -31,8 +41,9 @@
 	<div class="header__container">
 		
 		<?php get_template_part('_modules/_header__logo'); ?>
-
-		<?php if ( get_field('searchform', 'option') ) { ?>
+		
+		<?php 
+			if ( $search == true ) { ?>
 			
 			<div class="header__search">
 				<?php get_search_form(); ?>
@@ -48,8 +59,17 @@
 
 	</div>
 	
-	<?php include(locate_template('_modules/_subnavi.php')); ?>
+	<?php include(locate_template('_modules/_mega-menu.php')); ?>
+	<?php 
+		if ( $subnavi["subnavi__show"] ) {	
+			include(locate_template('_modules/_subnavi.php'));
+		}
+	?>
 
-<?php echo '<style>.header.header--fixed{ max-width: ' . $body__maxwidth . 'px !important; }</style>'; ?>
+<?php 
+	if ($body__maxwidth) {
+		echo '<style>.header.header--fixed{ max-width: ' . $body__maxwidth . 'px !important; }</style>';
+	}	 
+?>
 
 </header>

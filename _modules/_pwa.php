@@ -78,6 +78,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $color; ?>">
 
 <script>
+$(document).ready(function(){
   if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('<?php echo $serviceworker; ?>').then(function(registration) {
@@ -86,7 +87,8 @@
       console.log('ServiceWorker registration failed: ', err);
     });
   });
-} 
+}
+}); 
 </script>
 
 <?php } } ?>

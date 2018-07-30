@@ -220,6 +220,13 @@
 								include(locate_template('_modules/_faq.php'));
 							echo '</div>';
 
+						elseif( get_row_layout() == 'flex_counter' ):
+
+							echo '<div class="container__inner layout">';
+								$counters = get_sub_field('counter');
+								include(locate_template('_modules/_counter.php'));
+							echo '</div>';
+
 						elseif( get_row_layout() == 'content__list' ):
 
 							$content__list__rows = get_sub_field('content__list__rows');

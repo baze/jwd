@@ -37,6 +37,10 @@ if( have_rows('companies', 'option') ): while ( have_rows('companies', 'option')
 		<?php if ( get_sub_field('company__fon', 'option') ) { ?>
 			<span class="company__fon"><a href="tel:<?php the_sub_field('company__fon', 'option'); ?>"><?php the_sub_field('company__fon', 'option'); ?></a></span>
 		<?php } ?>
+
+		<?php if ( get_sub_field('company__mobile', 'option') ) { ?>
+			<span class="company__mobile"><a href="tel:<?php the_sub_field('company__mobile', 'option'); ?>"><?php the_sub_field('company__mobile', 'option'); ?></a></span>
+		<?php } ?>
 		
 		<?php if ( get_sub_field('company__fax', 'option') ) { ?>
 			<span class="company__fax"><a href="fax:<?php the_sub_field('company__fax', 'option'); ?>"><?php the_sub_field('company__fax', 'option'); ?></a></span>

@@ -1,5 +1,6 @@
 .product{
 	padding-top: 4em;
+	@include breakpoint($breakpoint-small) { padding: 4em 1em 0 1em; }
 }
 
 .product__section{
@@ -58,18 +59,30 @@
 
 .product__crosssale{}
 
+.category__header{
+	margin-top: 3em;
+
+	.breadcrumbs + &{ margin-top: 0; }
+}
+
 .category__title{
 	margin-top: 0 !important;
+
+	.tax-produktkategorie &{ margin-top: 3em; }
 }
 
 .taxonomy, .child-taxonomy{
+	
 	text-align: center;
+	margin-top: 3em;
 
-	& + &{ margin-top: 3em; padding-top: 3em; border-top: 1px solid #eee; }
+	& + &{ padding-top: 3em; border-top: 1px solid #eee; }
 	h2, .card{ text-align: left; }
 	.btn--border{ font-size: 0.75em; margin-top: 2.25em; width: 50%; }
+	&:last-child(){ padding-bottom: 3em; }
+	
 }
 
-.child-taxonomy{
+.product__list{
 	padding: 2em 0;
 }

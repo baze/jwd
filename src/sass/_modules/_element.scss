@@ -19,8 +19,8 @@
 	@extend %transition;
 	position: relative;
 
-	&.aos-init{ opacity: 0; }
-	&.aos-init.aos-animate{ opacity: 1; }
+	// &.aos-init{ opacity: 0; }
+	// &.aos-init.aos-animate{ opacity: 1; }
 
 	@include breakpoint($breakpoint-medium) {
 		background-color: darken($highlight-color-1, 35%);
@@ -34,7 +34,7 @@
 
 .element__small__img{
 	
-	padding-top: 2.5em;
+	//padding-top: 2.5em;
 	
 	@include breakpoint($breakpoint-medium) {
 		padding: 3.5em;

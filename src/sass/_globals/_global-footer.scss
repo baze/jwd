@@ -12,5 +12,7 @@
 	.column + .column{ 
 		@include breakpoint($breakpoint-small) { margin-top: 1.5rem; }
 	}
+
+	.company__legal{ display: none; }
 }
 

@@ -41,7 +41,7 @@
 						'depth'  => 1,
 						'title_li' => ''
 					); 
-					echo '<div class="child-taxonomy">';
+					echo '<div class="child-taxonomy-container">';
 					foreach (get_categories($args) as $cat) :
 				 		echo'<article class="child-taxonomy">';
 					 	
