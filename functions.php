@@ -306,6 +306,21 @@ function acf_load__local__business( $field ) {
 
 add_filter('acf/load_field/name=select__local__business', 'acf_load__local__business');
 
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/site-login-logo.png);
+    height: 96px;
+    width: 128px;
+    background-size: 128px 96px;
+    background-repeat: no-repeat;
+          padding-bottom: 16px;
+        }
+    .wp-core-ui .button-primary{ background-color: #e94654 !important; border: none !important; text-shadow: none !important; font-weight: bold; box-shadow: none !important; }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
 
 // acf fields
 //require get_template_directory() . '/inc/acf/acf_complete.php';
@@ -327,7 +342,6 @@ require get_template_directory() . '/inc/pages.php';
 //require get_template_directory() . '/inc/cpt/tax.php';
 
 // admin functions
-// require get_template_directory() . '/inc/block-users.php';
 require get_template_directory() . '/inc/version-removal.php';
 require get_template_directory() . '/inc/clean-head.php';
 require get_template_directory() . '/inc/template-tags.php';

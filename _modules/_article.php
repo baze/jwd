@@ -56,7 +56,14 @@
 
 		echo '</header>';
 
-		echo '<div class="article__body container__inner">';
+		$toggle = get_field('article__toggle');
+
+		if ( $toggle == true ) {
+			echo '<div class="article__body container__inner toggle">';
+		} else{
+			echo '<div class="article__body container__inner">';
+		}
+		
 
 			$show_toc = get_field('show__toc');
 
@@ -70,7 +77,9 @@
 		
 		echo '</div>';
 
-		echo '<a class="article__body__toggle btn btn--negative" href="">Mehr anzeigen</a>';
+		if ( $toggle == true ) {
+			echo '<a class="article__body__toggle btn btn--negative" href="">Mehr anzeigen</a>';
+		}
 
 		echo '<div class="post__author container__inner">';
 

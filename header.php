@@ -36,13 +36,13 @@
     
     if ( !is_page_template('_templates/vorschaltseite.php') ) {
       include(locate_template('_modules/_shop-bar.php'));
-      include(locate_template('_modules/_header.php'));
+      include(locate_template('_modules/_header_flexible.php'));
       get_template_part('_modules/_sub-navi'); 
     }    
     
     
 
-    if ( !is_singular( 'post' ) && !is_singular( 'download' ) && !is_singular( 'product' ) && !is_singular( 'produkte' ) && !is_archive() && !is_search() && !is_category() && !is_page_template('_templates/vorschaltseite.php') ) {
+    if ( !is_singular( 'post' ) && !is_singular( 'download' ) && !is_singular( 'product' ) && !is_singular( 'produkte' ) && !is_singular( 'veranstaltung' ) && !is_archive() && !is_search() && !is_category() && !is_page_template('_templates/vorschaltseite.php') ) {
 
       if ( get_field('show__slider') ) {
         get_template_part('_modules/_slider');

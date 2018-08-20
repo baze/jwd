@@ -37,7 +37,7 @@
 
 .article__body{
 
-	.js &{
+	.js &.toggle{
 		@extend %transition;
 		position: relative;
 		max-height: 16em;

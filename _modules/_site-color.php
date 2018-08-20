@@ -49,6 +49,10 @@
 		.headline-transition:after{ background-color:<?php echo($site__color); ?>; }
 		.faq__question.active, .landingpage-toc .active, blockquote:before, .shortcode-message h4, .counter__number, .mega__menu__section h3 .fa{ color: <?php echo($site__color); ?>;  }
 		.woocommerce ul.products li.product .onsale, .woocommerce span.onsale{ background-color:<?php echo($site__color); ?>; filter: invert(100%); color: #000;}
-		.page-template-produkte .header--fixed-transparent .menu__cta, .tax-produktkategorie .header--fixed-transparent .menu__cta, .produkte-template-default .header--fixed-transparent .menu__cta, .woocommerce-page .header--fixed-transparent .menu__cta, .under_construction__container, .badge{ background-color:<?php echo($site__color); ?> !important; }
+		.page-template-produkte .header--fixed-transparent .menu__cta, .tax-produktkategorie .header--fixed-transparent .menu__cta, .produkte-template-default .header--fixed-transparent .menu__cta, .woocommerce-page .header--fixed-transparent .menu__cta, .under_construction__container, .badge, .wp-block-button__link:not(.has-background), .wp-block-button__link:not(.has-background):active, .wp-block-button__link:not(.has-background):focus, .wp-block-button__link:not(.has-background):hover, .fc-content, .fc-event, .fc-event-dot{ background-color:<?php echo($site__color); ?> !important; }
+		.fc-event, .fc-event-dot{ border: 1px solid <?php echo($site__color); ?> !important;  }
+		main p a{border-bottom: 2px solid <?php echo($site__color); ?>;}
+		main p a:hover{ background-color:<?php echo($site__color); ?>; color: #fff !important;  }
+		main p a:after{ background-color:<?php echo($site__color); ?>; }
 	</style>
 <?php } ?>

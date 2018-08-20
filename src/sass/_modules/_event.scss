@@ -1,0 +1,65 @@
+.event__calendar, 
+.event{
+	padding: 2em 0 6em 0; 
+}
+
+.fc-day-grid-event .fc-content{ white-space: normal !important; overflow: visible; }
+
+.calendar__desc{
+	margin-top: 4em;
+}
+
+.event__header{
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.event__sidebar{
+	@include breakpoint($breakpoint-medium) {
+		width: span( 3 of 12 );
+	}
+}
+
+.event__info{
+	@include breakpoint($breakpoint-medium) {
+		position: sticky;
+		webkit-position: sticky;
+		top: 2em;
+		border: 1px solid $light-gray;
+		background-color: $white;
+	}
+}
+
+.event__date{}
+
+.event__cost{
+	margin-top: gutter();
+	padding-top: gutter();
+	border-top: 1px solid $light-gray;
+}
+
+.event__btn{
+	display: block;
+	text-align: center;
+}
+
+.event__date,
+.event__cost{
+	@include breakpoint($breakpoint-medium) { padding: 0.75em; }
+}
+
+.event__main{
+	@include breakpoint($breakpoint-small) {
+		margin-top: 2em;
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		padding-left: gutter();
+		width: span( 9 of 12 );
+	}
+}
+
+.event__location__map,
+.event__form{
+	margin-top: 2em;
+}

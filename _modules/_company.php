@@ -10,17 +10,22 @@ if( have_rows('companies', 'option') ): while ( have_rows('companies', 'option')
 
 	<div class="company__adress">
 		
+		<div>
 		<?php if ( get_sub_field('company__streetaddress', 'option') ) { ?>
 			<span class="company__streetaddress"><?php the_sub_field('company__streetaddress', 'option'); ?></span>
 		<?php } ?>
-		
+		</div>
+
+		<div>
 		<?php if ( get_sub_field('company__zipcode', 'option') ) { ?>
 			<span class="company__zipcode"><?php the_sub_field('company__zipcode', 'option'); ?></span>
 		<?php } ?>
+
 		
 		<?php if ( get_sub_field('company__city', 'option') ) { ?>
 			<span class="company__city"><?php the_sub_field('company__city', 'option'); ?></span>		
 		<?php } ?>
+		</div>
 		
 		<?php if ( get_sub_field('company__state', 'option') ) { ?>
 			<span class="company__state"><?php the_sub_field('company__state', 'option'); ?></span>
@@ -81,7 +86,7 @@ if( have_rows('companies', 'option') ): while ( have_rows('companies', 'option')
 <script type="application/ld+json">
 <?php 
 	$company__rating = get_sub_field('company__rating', 'option');
-	$company__coordinates = get_sub_field('company__coordinates', 'option');
+	$company__coordinates = get_sub_field('company__location__map', 'option');
 ?>	
 {
   "@context": "http://schema.org",
@@ -101,8 +106,8 @@ if( have_rows('companies', 'option') ): while ( have_rows('companies', 'option')
   "telephone": "<?php the_sub_field('company__fon', 'option'); ?>",
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": <?php echo $company__coordinates["company__lat"]; ?>,
-    "longitude": <?php echo $company__coordinates["company__long"]; ?>
+    "latitude": <?php echo $company__coordinates["lat"]; ?>,
+    "longitude": <?php echo $company__coordinates["lng"]; ?>
   },
   "aggregateRating": {
     "@type": "AggregateRating",

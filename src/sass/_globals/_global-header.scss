@@ -61,71 +61,77 @@
 .header__container{
 	width: 100%;
 	position: relative;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
+}
+
+.header__row{
 	
-	.header--reverse &{
-		flex-direction: column-reverse;
+	flex-direction: column;
+	align-items: center;
+	
+	padding: 0.75em;
+
+	& + &{ margin-top: 0; }
+
+	.column{ 
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		margin: 0;
+		padding: 0;
+
+		@include breakpoint($breakpoint-small) {
+			margin-top: 0.75em;
+			width: 100%;
+		}
+
+		& *{ align-items: center; }
+
 	}
+
+	@include breakpoint($breakpoint-medium) {  flex-direction: row; }
 
 	.header--center &{
-		display: block;
+		justify-content: space-around;
+		align-items: center;
 	}
 
-	@include breakpoint($breakpoint-medium) { 
-		flex-direction: row;
-		.header--reverse &{	flex-direction: row-reverse; } 
+	.header--reverse &{
+		justify-content: flex-end;
 	}
+	
+	.storelist__location__info__openinghours{ margin: 0; }
 
-	padding: 0.75em;
 }
 
 .header__logo{
 	
-	width: 16em;
-
-	img, svg{ max-width: 100%; }
-
-	@include breakpoint($breakpoint-medium) { 
-		
-		.header--inline &{ 
-			position: absolute;
-  			top: 50%;
-  			left: 50%;
-  			transform: translate(-50%, -50%);
-		} 
-	}
-
-	svg{ min-width: 16em; @extend %fleximage; }
-
-	.header--center &{ margin: 0 auto; }
+	img, svg{ @extend %fleximage; max-width: 100%; }
 }
 
 .header__search{
-
-	margin: 0 0.75em;
+	
+	padding: 0.75em;
+	display: flex;
+	justify-content: center;
 
 	.search__form{
 		height: 36px;
 		line-height: 36px;
+		width: 100%;
+		background-color: $white;
 	}
 
-	@include breakpoint($breakpoint-small) {
-		order: 1;
-	}
-	
-	@include breakpoint($breakpoint-medium) { 
-		flex-shrink: 1;
-		flex-grow: 1;
-	}
 }
 
-.header__navigation{
+nav.navigation{ 
+	width: 100%;
+}
+
+.header__navigation, .header__navigation__custom{
+	@extend %hide-scrollbars;
 
 	display: flex;
-
+	
 	.header--center &{
 		justify-content: center;
 		align-items: center;
@@ -143,16 +149,8 @@
 		}
 		.menu__cta{ border-color: $white; }
 	}
-
-	.menu__cta{
-		
-		letter-spacing: 0.025em;
-
-		@include breakpoint($breakpoint-small) { border: 1px solid $white; }
 	
-		@include breakpoint($breakpoint-medium) { 
-			border: none; border-radius: 4px;
-		}	   	
+	.cta__container{
 	
 		@include breakpoint($breakpoint-small) {
 			position: fixed !important;
@@ -161,13 +159,34 @@
 			left: 0.75em;
 			right: 0.75em;
 			z-index: 999995;
-		}	
+		}
+
+		@include breakpoint($breakpoint-small-medium) {
+			flex-shrink: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	.menu__cta{
+		
+		letter-spacing: 0.025em;
+		width: 100%;
+
+		@include breakpoint($breakpoint-small) { border: 1px solid $white; }
+	
+		@include breakpoint($breakpoint-medium) { border: none; border-radius: 4px; }	   	
+			
 	}
 
 	.menu{ 
+		flex-grow: 1;
 		display: flex;
 		flex-wrap: wrap;
-		@include breakpoint($breakpoint-medium) { flex-wrap: nowrap; }
+
+		@include breakpoint($breakpoint-medium) { flex-wrap: wrap; white-space: nowrap; }
 		align-items: center;
 		justify-content: space-evenly;
 
@@ -268,6 +287,22 @@
 	}
 
 	.menu > .menu-item:not(.menu__cta){ padding: 0 1em; }
+}
+
+.header__fon{
+	font-weight: 700;
+
+	a{ 
+		display: block;
+		width: 100%;
+		text-align: center;
+		line-height: 1;
+		font-size: 1.35em;
+		
+		@include breakpoint($breakpoint-small) {
+			text-align: center !important;
+		}  
+	}
 }
 
 .sub-navi{

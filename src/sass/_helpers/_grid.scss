@@ -31,7 +31,7 @@ $susy: (
     flex-wrap: wrap;
     flex-direction: column;
 
-    @include breakpoint($breakpoint-small-medium) { 
+    @include breakpoint($breakpoint-medium) { 
         
         flex-direction: row;
 
@@ -78,7 +78,7 @@ $susy: (
   width: 100%;
   position: relative;
 
-  @include breakpoint($breakpoint-small-medium) { flex-direction: row; }
+  @include breakpoint($breakpoint-medium) { flex-direction: row; }
 
   & + &{ margin-top: gutter() * 2; }
 
@@ -88,7 +88,7 @@ $susy: (
 
 .column{
 
-  @include breakpoint($breakpoint-small-medium) { 
+  @include breakpoint($breakpoint-medium) { 
     $start: 1;
     $end: 12;
 

@@ -29,6 +29,8 @@ body{
 	}
 
 	img{ max-width: 100%; }
+
+	&.single-post{ max-width: 100%; overflow-x: hidden; }
 	
 }
 
@@ -61,6 +63,15 @@ body{
 		padding-top: 10em;
 		top: -1px;
 		float: right;
+		
+		#widget__contacts{
+			position: sticky;
+			webkit-position: sticky;
+			top: 1em;
+			background-color: $white;
+			z-index: 4;
+		}
+
 	}
 }
 

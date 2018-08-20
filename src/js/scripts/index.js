@@ -13,3 +13,4 @@ require('./article-toggle.js')();
 require('./faq.js')();
 require('./smoothScroll.js')();
 require('./storefinder.js')();
+//require('./fullcalendar.js')();

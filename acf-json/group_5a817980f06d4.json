@@ -112,25 +112,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5af16dcde1645",
-            "label": "Unternavigation",
-            "name": "show_sub_pages",
-            "type": "true_false",
-            "instructions": "Automatisch generierte Unternavigation",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Unternavigation auf mobilen Geräten anzeigen?",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5afc4a81021d8",
             "label": "Unternavigation",
             "name": "",
@@ -406,5 +387,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530873932
+    "modified": 1534745663
 }

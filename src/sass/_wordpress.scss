@@ -223,3 +223,51 @@ embed, iframe, object {
 		&.first{ margin: 0; }
 	}
 }
+
+// GUTENBERG support
+
+/* figure{ margin: 0; }
+
+.alignfull{
+	width: 100%;
+	
+	@include breakpoint($breakpoint-medium) {
+		min-width: 100%;
+		width: 100vw;
+  		position: relative;
+  		left: 50%;
+  		right: 50%;
+  		margin-left: -50vw !important;
+  		margin-right: -50vw !important;
+  	}
+}
+
+.alignwide{
+	position: relative;
+	width: 100%;
+
+	@include breakpoint($breakpoint-medium) {
+		width: 150%;
+		margin-left: -25%;
+	}
+}
+
+.wp-block-embed{
+	position: relative;
+	height: 0;
+	width: 100%;
+	padding-bottom: 56.25%;
+	margin: 1.5em 0 !important;
+}
+
+iframe{ 
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.wp-block-separator{ margin: 1.5em 0; } */

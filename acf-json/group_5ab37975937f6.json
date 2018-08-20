@@ -565,61 +565,6 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5ab37f83d0f52",
-                    "label": "Koordinaten",
-                    "name": "company__coordinates",
-                    "type": "group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "table",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ab37f98d0f53",
-                            "label": "Breitengrad (lat)",
-                            "name": "company__lat",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ab37fbbd0f54",
-                            "label": "Längengrad (long)",
-                            "name": "company__long",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
-                },
-                {
                     "key": "field_5ab380e4d0f57",
                     "label": "Firmenbewertung",
                     "name": "company__rating",
@@ -698,5 +643,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531980794
+    "modified": 1534403871
 }

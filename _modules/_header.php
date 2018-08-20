@@ -38,20 +38,19 @@
 
 <?php } ?>	
 
-	<div class="header__container">
-		
-		<?php get_template_part('_modules/_header__logo'); ?>
-		
-		<?php 
-			if ( $search == true ) { ?>
+	<?php 
+		if ( $search == true ) { ?>
 			
 			<div class="header__search">
 				<?php get_search_form(); ?>
 			</div>
 
-		<?php } ?>
-		
+	<?php } ?>
 
+	<div class="header__container">
+		
+		<?php get_template_part('_modules/_header__logo'); ?>
+		
 		<nav class="header__navigation navigation" role="navigation">
 			<?php get_template_part('_menus/_menu-primary');?>
 			<?php get_template_part('_modules/_cta');?>

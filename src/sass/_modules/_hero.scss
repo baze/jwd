@@ -71,6 +71,7 @@
 }
 
 @keyframes animatedBackground {
+    
     0%, 100% {
         -webkit-transform: scale(1);
         transform: scale(1)
@@ -86,7 +87,14 @@
 	position: relative;
 	padding: 2em;
 	z-index: 2;
+	
+	@include breakpoint($breakpoint-small) {
+			max-width: 100%;
+			& *{ white-space: pre-line; word-wrap: break-word; }
+	}
+
 	@include breakpoint($breakpoint-medium) { flex-basis: 35%; }
+	
 	&.container{ padding: 2em 1rem; }
 }
 

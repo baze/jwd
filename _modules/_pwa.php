@@ -15,14 +15,14 @@
 		$serviceworker_filename = $serviceworker_upload["filename"];
 
 		$url = $serviceworker_url;
-		$destination_folder = ABSPATH;
+		$destination_folder = $base;
 
 	    $newfname = $destination_folder . $serviceworker_filename;
 
 	    $file = fopen ($url, "rb");
 
 	    if ($file) {
-	      $newf = fopen ($newfname, "a");
+	      $newf = fopen ($newfname, "wb");
 
 	      if ($newf)
 	      while(!feof($file)) {
@@ -53,32 +53,38 @@
 	if ( get_field('pwa__icon', 'option') ) {
 		$icon = get_field('pwa__icon', 'option');
 	}
-
-	if ( isset($manifest) && isset($serviceworker) && isset($color) && isset($icon) ) {
 	
 ?>
 
-<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $icon["sizes"]["icon-57x57"]; ?>">
-<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $icon["sizes"]["icon-60x60"]; ?>">
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $icon["sizes"]["icon-72x72"]; ?>">
-<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $icon["sizes"]["icon-76x76"]; ?>">
-<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $icon["sizes"]["icon-114x114"]; ?>">
-<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $icon["sizes"]["icon-120x120"]; ?>">
-<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $icon["sizes"]["icon-144x144"]; ?>">
-<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $icon["sizes"]["icon-152x152"]; ?>">
-<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $icon["sizes"]["icon-180x180"]; ?>">
-<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo $icon["sizes"]["icon-192x192"]; ?>">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $icon["sizes"]["icon-32x32"]; ?>">
-<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $icon["sizes"]["icon-96x96"]; ?>">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $icon["sizes"]["icon-16x16"]; ?>">
-<link rel="manifest" href="<?php echo $manifest; ?>">
+<?php if ( isset($color) ) {  ?>
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $icon["sizes"]["icon-57x57"]; ?>">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $icon["sizes"]["icon-60x60"]; ?>">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $icon["sizes"]["icon-72x72"]; ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $icon["sizes"]["icon-76x76"]; ?>">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $icon["sizes"]["icon-114x114"]; ?>">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $icon["sizes"]["icon-120x120"]; ?>">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $icon["sizes"]["icon-144x144"]; ?>">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $icon["sizes"]["icon-152x152"]; ?>">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $icon["sizes"]["icon-180x180"]; ?>">
+	<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo $icon["sizes"]["icon-192x192"]; ?>">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $icon["sizes"]["icon-32x32"]; ?>">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $icon["sizes"]["icon-96x96"]; ?>">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $icon["sizes"]["icon-16x16"]; ?>">
+<?php  } ?>
 
-<meta name="theme-color" content="<?php echo $color; ?>">
-<meta name="msapplication-navbutton-color" content="<?php echo $color; ?>">
-<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $color; ?>">
+<?php if ( isset($manifest) ) {  ?>
+	<link rel="manifest" href="<?php echo $manifest; ?>">
+<?php  } ?>
+
+<?php if ( isset($color) ) {  ?>
+	<meta name="theme-color" content="<?php echo $color; ?>">
+	<meta name="msapplication-navbutton-color" content="<?php echo $color; ?>">
+	<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $color; ?>">
+<?php  } ?>
+
+<?php if ( isset($manifest) && isset($serviceworker) && isset($color) && isset($icon) ) { ?>
 
 <script>
-$(document).ready(function(){
   if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('<?php echo $serviceworker; ?>').then(function(registration) {
@@ -88,7 +94,6 @@ $(document).ready(function(){
     });
   });
 }
-}); 
 </script>
 
 <?php } } ?>

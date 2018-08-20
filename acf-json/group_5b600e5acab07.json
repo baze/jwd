@@ -1,11 +1,11 @@
 {
-    "key": "group_5b5d8d077f6cc",
-    "title": "Suchmaske",
+    "key": "group_5b600e5acab07",
+    "title": "Artikel verstecken?",
     "fields": [
         {
-            "key": "field_5b5d8d12a233f",
-            "label": "Suchmaske anzeigen?",
-            "name": "searchform",
+            "key": "field_5b600e6a0e6ef",
+            "label": "Artikel verstecken?",
+            "name": "article__toggle",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -25,9 +25,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf-options-header"
+                "value": "post"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1532857670
+    "modified": 1533049024
 }

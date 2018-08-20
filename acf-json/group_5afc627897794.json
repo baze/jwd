@@ -37,18 +37,17 @@
                 "id": ""
             },
             "choices": {
-                "header--normal": "Logo links, Navigation rechts",
-                "header--reverse": "Navigation links, Logo rechts",
-                "header--center": "Logo oben, Navigation darunter (zentriert)",
-                "header--inline": "Logo zentriert, Navigation links und rechts",
+                "header--normal": "Linksbündig",
+                "header--reverse": "Rechtsbündig",
+                "header--center": "Zentriert",
                 "header--fixed  header--fixed-transparent": "Header mitlaufend"
             },
             "default_value": [],
             "allow_null": 0,
             "multiple": 1,
             "ui": 0,
-            "ajax": 0,
             "return_format": "value",
+            "ajax": 0,
             "placeholder": ""
         }
     ],
@@ -69,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531748724
+    "modified": 1534435736
 }

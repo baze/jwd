@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "aos": "^2.2.0",
-    "jquery": "^2.1.1",
+    "fullcalendar": "^3.9.0",
+    "jquery": "^2.2.4",
     "onscreen": "^1.3.2",
     "smooth-scroll": "^12.1.5",
     "waypoints": "^4.0.1"
